@@ -1,0 +1,24 @@
+a {
+  font-size: 15pt;
+  color: #800020;
+}
+
+a,
+p {
+  background-color: rgb(157, 87, 87);
+}
+
+p,
+.a2 {
+  font-weight: 900;
+  font-size: 40pt;
+}
+
+input {
+  width: 500px;
+  height: 80px;
+  font-size: 40pt;
+  border-color: red;
+  border-width: 10px;
+  border-radius: 20px;
+}
