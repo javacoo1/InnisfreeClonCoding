@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        background-color: yellow;
+        display: flex;
+      }
+
+      .item {
+        background-color: green;
+        border: 1px solid;
+        /* flex-basis: 100px; */
+        /* width: 100px;
+        word-wrap: break-word; */
+        /* flex-grow: 1; */
+        flex-basis: 200px;
+        flex-shrink: 1;
+      }
+
+      .item:nth-child(1) {
+        flex-basis: 200px;
+        flex-shrink: 0;
+        z-index: 10;
+      }
+
+      .item:nth-child(2) {
+        background-color: #8bb838;
+        /* transform: scale(1.5);
+        z-index: 9; */
+      }
+      .item:nth-child(4) {
+        background-color: #8bb838;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">나는</div>
+      <div class="item">Java와 비슷하지만 JavaScript라고,</div>
+      <div class="item">Java가 아니야!</div>
+      <div class="item">나야 Java야?! 하나만 정하란말이야!!!</div>
+    </div>
+  </body>
+</html>

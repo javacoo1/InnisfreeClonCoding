@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        background-color: gray;
+        height: 400vh;
+      }
+
+      .menu {
+        width: 100%;
+        background-color: black;
+        color: white;
+        position: fixed;
+        top: 0px;
+        height: 50px;
+      }
+
+      .item {
+        background-color: rgb(193, 148, 148);
+        border: 1px solid;
+        width: 200px;
+        height: 200px;
+        font-size: 50pt;
+        text-align: center;
+      }
+
+      .items {
+        display: flex;
+      }
+
+      .items2 {
+        display: flex;
+      }
+
+      .items3 {
+        display: flex;
+      }
+
+      .c {
+        background-color: rgb(183, 62, 62);
+        position: relative;
+        left: 100px;
+        top: -100px;
+        opacity: 0.5;
+      }
+
+      .num {
+        display: flex;
+        z-index: 20;
+        border: 1px solid;
+        position: relative;
+        width: 500px;
+        height: 500px;
+      }
+
+      .num1 {
+        background-color: rgb(193, 148, 148);
+        border: 1px solid;
+        width: 200px;
+        height: 200px;
+        font-size: 50pt;
+        text-align: center;
+        position: absolute;
+      }
+
+      .d {
+        z-index: 1;
+      }
+
+      .e {
+        background-color: rgb(184, 43, 43);
+        left: 100px;
+        top: 100px;
+        border-radius: 50%;
+        z-index: 1;
+      }
+
+      .f {
+        left: 200px;
+        top: 200px;
+        z-index: 1;
+      }
+
+      .g {
+        left: 300px;
+        top: 300px;
+        z-index: 2;
+      }
+
+      .aaa {
+        margin-left: 100px;
+        background-color: gray;
+        border: 8px solid;
+        width: 900px;
+        height: 900px;
+        box-shadow: 20px 20px 20px rgb(204, 103, 103);
+        z-index: -2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .ccc {
+        /* padding-top: 250px; */
+        background-color: gray;
+        border: 2px solid;
+        position: relative;
+        top: -860px;
+        left: 106px;
+        width: 500px;
+        height: 503px;
+        z-index: 0.5;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="menu">menu</div>
+      <div class="items">
+        <div class="item">A</div>
+        <div class="item">B</div>
+      </div>
+      <div class="items2">
+        <div class="item">A</div>
+        <div class="item">B</div>
+      </div>
+      <div class="items3">
+        <div class="item c">C</div>
+        <div class="item c">D</div>
+      </div>
+
+      <div class="aaa">
+        <div class="num">
+          <div class="num1 d">1</div>
+          <div class="num1 e">2</div>
+          <div class="num1 f">3</div>
+          <div class="num1 g">4</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
