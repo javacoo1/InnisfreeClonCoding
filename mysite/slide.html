@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bxslider@4.2.17/dist/jquery.bxslider.min.js"></script>
+
+    <script>
+      $(function () {
+        $(".bxslider").bxSlider({
+          mode: "fade",
+          captions: false,
+          slideWidth: 600,
+          centeredSlides: true,
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <table border="1" id="site-tbl">
+      <tr>
+        <td><a href="index.html">이진현의 영역전개</a></td>
+      </tr>
+    </table>
+    <table border="1" id="site-menu-tbl">
+      <tr>
+        <td><a href="menu.html">menu1</a></td>
+        <td><a href="join.html">가입</a></td>
+        <td><a href="slide.html">슬라이드</a></td>
+        <td><a href="https://naver.com">네이버로</a></td>
+        <td><a href="login.html">로그인</a></td>
+        <td><a href="age.html">나이</a></td>
+      </tr>
+    </table>
+    <table border="1" id="content-tbl">
+      <tr>
+        <td>
+          <div class="bxslider">
+            <div>
+              <img
+                src="https://bxslider.com/assets/coffee1-7325690f507d48962d312be15d9d8929be4a5ff04d184d5ed0a96c1b27940260.jpg"
+                title="Coffee 1"
+              />
+            </div>
+            <div>
+              <img
+                src="https://bxslider.com/assets/coffee2-8bb17517b21cc5b38f3ea7d14cfc4b4c82cc51b99e82bfc3a6d02688ab6c5988.jpg"
+                title="Coffee 2"
+              />
+            </div>
+            <div>
+              <img
+                src="https://bxslider.com/assets/coffee3-02c76c3b922183d7c5144e6856065ad68834ddc7ab5367481a225c516a308cb8.jpg"
+                title="Coffee 3"
+              />
+            </div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
