@@ -19,7 +19,7 @@ table {
 
 #site-tbl {
   height: 100px;
-  background-color: #001d00;
+  background-color: #bf344d;
 }
 
 #site-tbl a {
@@ -30,7 +30,7 @@ table {
 /*Menu*/
 #site-menu-tbl {
   height: 80px;
-  background-color: #004932;
+  background-color: #0367a6;
 }
 
 #site-menu-tbl a {
@@ -43,8 +43,7 @@ table {
 /*Content*/
 #content-tbl {
   height: 600px;
-  background-color: #868678;
-  background-image: url(https://plus.unsplash.com/premium_photo-1672201106204-58e9af7a2888?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8JUVBJUI3JUI4JUVCJTlEJUJDJUVCJThEJUIwJUVDJTlEJUI0JUVDJTg1JTk4JTIwJUVCJUIwJUIwJUVBJUIyJUJEfGVufDB8fDB8fHww);
+  background-color: #03a678;
   background-size: cover;
   color: black;
 }
@@ -66,9 +65,11 @@ table {
 }
 
 #login-tbl {
+  background-color: #0d0d0d;
   border: 3px dotted black;
   width: 500px;
   height: 250px;
   font-size: 20pt;
   margin: auto;
+  color: white;
 }

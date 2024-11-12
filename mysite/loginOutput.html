@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="index.css" />
     <script src="login.js"></script>
   </head>
-  <body>
+  <body onload="setVal()">
     <table border="1" id="site-tbl">
       <tr>
         <td><a href="index.html">이진현의 7080</a></td>
@@ -18,7 +18,7 @@
         <td><a href="menu.html">menu1</a></td>
         <td><a href="join.html">가입</a></td>
         <td><a href="slide.html">슬라이드</a></td>
-        <td><a href="https://naver.com">네이마르</a></td>
+        <td><a href="https://naver.com">네이버로</a></td>
         <td><a href="login.html">로그인</a></td>
         <td><a href="age.html">나이</a></td>
       </tr>
@@ -29,22 +29,15 @@
           <table border="4" id="login-tbl">
             <tr>
               <td>이름</td>
-              <td id="name-td-login"><input type="text" id="user-name" /></td>
+              <td id="name-td-login"></td>
             </tr>
             <tr>
               <td>ID</td>
-              <td id="id-td-login"><input type="text" id="user-id" /></td>
+              <td id="id-td-login"></td>
             </tr>
             <tr>
               <td>PW</td>
-              <td id="pw-td-login"><input type="text" id="user-pw" /></td>
-            </tr>
-            <tr id="button-login">
-              <td colspan="2">
-                <button onclick="login()">ligin(param o)</button>
-                <button onclick="login2()">login(조잡-다 그려내기)</button>
-                <button onclick="login3(this)">login(param x)</button>
-              </td>
+              <td id="pw-td-login"></td>
             </tr>
           </table>
         </td>
