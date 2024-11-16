@@ -692,3 +692,293 @@ span[class*="sticker"] {
   line-height: 1.33em;
   color: #999e9c;
 }
+
+/* best banner */
+
+.bestBanner.sectionBox {
+  width: 100%;
+}
+
+.bestBanner {
+  position: relative;
+  margin: 100px 0;
+  padding: 100px 0;
+  background-color: #f5f5f5;
+}
+
+.sectionBox {
+  position: relative;
+  width: 1280px;
+  margin: 0 auto;
+  padding: 100px 0;
+}
+
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+menu,
+nav,
+section,
+main {
+  display: block;
+}
+
+section {
+  display: block;
+  unicode-bidi: isolate;
+}
+
+.bestBanner > div {
+  width: 1280px;
+  margin: 0 auto;
+}
+
+.swiper-container-horizontal {
+  overflow: hidden;
+}
+
+div {
+  display: block;
+  unicode-bidi: isolate;
+}
+
+/* 얘 추가하니까 배너 뜸(크기는 안맞음) */
+.bestBanner .listEvent02 {
+  flex-wrap: nowrap;
+  gap: 0;
+}
+
+.listEvent02 {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 100%;
+}
+
+.swiper-wrapper {
+  position: relative;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.slide .listEvent02 {
+  flex-wrap: nowrap;
+  gap: 0;
+}
+
+.bestBanner .swiper-wrapper .swiper-slide {
+  margin-right: 20px;
+}
+
+.bestBanner.prdSwiper .progressbar {
+  margin-top: 55px;
+}
+
+.swiper-wrapper .swiper-slide {
+  flex-shrink: 0;
+}
+
+/* 얘도 */
+.prdSwiper .progressbar {
+  position: relative;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 1px;
+  margin-top: 61px;
+  background-color: #dddddd;
+}
+
+.bestBanner .listEvent02 .item {
+  height: auto;
+}
+
+.listEvent02 .item {
+  width: 413px;
+  height: 386px;
+}
+
+.listEvent02 .item a {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* 배너 위에 있던 글씨가 배너 왼쪽위로 들어옴 */
+.listEvent02 .item .sticker04 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  height: 24px;
+  font-size: 14px;
+  line-height: 1.29em;
+}
+
+span[class*="sticker"] {
+  display: inline-flex;
+  align-items: center;
+  height: 18px;
+  padding: 0 5px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.4em;
+  letter-spacing: 0;
+}
+
+/* 위에서 넣은 놈 검은배경 */
+.sticker04 {
+  color: #fff;
+  background: #000;
+}
+
+/* 배너 틀 크기 잡음(그 안에 사진은 여전히 짤려있음) */
+.listEvent02 .item .evtImg {
+  flex: none;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  width: 100%;
+  height: 272px;
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  transition: border 0.3s;
+}
+
+/* 얘 넣으니까 안에 사진 안짤리고 자리잡음 */
+.listEvent02 .item .evtImg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.3s;
+}
+
+/* 여기서부터는 배너 아래 글씨조정 */
+.bestBanner .listEvent02 .item .cnt-area {
+  height: auto;
+}
+
+.listEvent02 .item .cnt-area {
+  height: 114px;
+}
+
+/* 배너 아래 날짜 top여백 등 */
+.listEvent02 .item .date {
+  display: block;
+  margin: 20px 0 5px;
+  font-size: 14px;
+  line-height: 1.43em;
+  letter-spacing: -0.01em;
+  color: #666666;
+  opacity: 0.8;
+}
+
+.listEvent02 .item .cnt-area > * {
+  transition: color 0.3s;
+}
+
+.bestWrap .date {
+  flex: none;
+  font-size: 14px;
+  line-height: 1.43em;
+  letter-spacing: -0.01em;
+  color: #999999;
+}
+
+/* 배너 아래 폰트관련 */
+.listEvent02 .item .name {
+  display: block;
+  margin-top: 5px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.38em;
+  color: #000000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+/* 배너  설명 그 아래 progressbar */
+.bestBanner.prdSwiper .progressbar {
+  margin-top: 55px;
+}
+
+.prdSwiper .progressbar {
+  position: relative;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  height: 1px;
+  margin-top: 61px;
+  background-color: #dddddd;
+}
+
+/* 얘 넣으니까 검정색 바 생김(움직이진 않음) */
+.prdSwiper .progressbar .swiper-pagination-progressbar-fill {
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+  transform: scale(0);
+  transform-origin: left top;
+}
+
+/* 배너 양쪽 */
+.bestBanner .slideControl {
+  left: 50%;
+  width: 1280px;
+  margin: 0 auto;
+  transform: translateX(-50%) translateY(-16px);
+}
+
+.prdSwiper .slideControl {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 0;
+}
+
+.prdSwiper .slideControl button {
+  position: absolute;
+  top: 0;
+  transform: translateY(-50%);
+}
+
+.prdSwiper .slideControl .btnPrev {
+  /* 위치가 안맞아서 수동으로 px단위 맞춤 */
+  left: 560px;
+  transform: rotate(180deg);
+}
+
+.prdSwiper .slideControl .btnNext {
+  /* 동일하게 수동으로 맞춤 + 왼쪽 버튼이랑 높이가 안맞아서 눈데중을 맞춤*/
+  right: -710px;
+  top: 15px;
+}
+
+.prdSwiper .slideControl button {
+  width: 32px;
+  height: 32px;
+  background: url(../images/ui/arr_r32_black.png) no-repeat 50% 50%;
+}
+
+.prdSwiper .slideControl .btnPrev {
+  transform: rotate(180deg);
+}
