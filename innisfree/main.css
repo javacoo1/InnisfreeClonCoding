@@ -1,0 +1,694 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.wrap {
+  min-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  width: 1280px;
+  height: 10000px;
+  border: 1px;
+}
+.main-space {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 25px;
+  margin: 0 auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+.free-space {
+  width: 125px;
+  border: 1px solid;
+}
+.border {
+  border: 1px solid;
+}
+.header-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
+  flex-grow: 1;
+}
+.header-main img {
+  width: 100%;
+}
+
+/* 검색창 컨테이너 */
+.logo {
+  display: flex; /* 플렉스박스를 사용하여 자식 요소들을 정렬 */
+  align-items: center; /* 세로로 중앙 정렬 */
+}
+.search-container {
+  width: auto;
+  position: relative;
+  display: flex; /* 플렉스박스를 사용하여 자식 요소들을 정렬 */
+  align-items: center; /* 세로로 중앙 정렬 */
+  border-bottom: 1px solid black; /* 밑줄 추가 */
+  right: -10px;
+}
+
+/* 입력창 스타일 */
+.search-input {
+  width: 520px; /* 너비 */
+  padding: 8px; /* 안쪽 여백 */
+  font-size: 16px;
+  outline: none;
+  background-color: transparent; /* 배경을 투명하게 */
+  border: none; /* border 제거 */
+}
+
+/* 버튼 스타일 */
+.search-button {
+  position: relative;
+  padding: 7.5px;
+  font-size: 16px;
+  border-bottom: 3px solid #000000; /* 밑줄 추가 */
+  cursor: pointer;
+  background-color: transparent; /* 배경을 투명하게 */
+  border: none; /* border 제거 */
+}
+
+/* 로그인, 마이페이지, 장바구니 메뉴 */
+.login-ex {
+  gap: 20px;
+}
+.user-actions {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%; /* 부모 높이를 기준으로 중앙 정렬 */
+  width: 100%;
+}
+
+/* 개별 사용자 액션 버튼 */
+.user-action {
+  display: flex;
+  flex-direction: column; /* 아이콘 위에 텍스트를 배치 */
+  justify-content: center; /* 세로축 기준으로 중앙 정렬 */
+  align-items: center; /* 아이콘과 텍스트 중앙 정렬 */
+  margin-left: 20px; /* 버튼 사이의 간격 */
+  cursor: pointer;
+}
+
+/* 아이콘 스타일 */
+.icon {
+  font-size: 12px; /* 아이콘 크기 */
+  line-height: 1.5em;
+  color: #000000;
+}
+
+/* 텍스트 스타일 */
+.text {
+  font-size: 12px;
+  color: #666666;
+}
+
+#nav {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 740;
+}
+#nav-2 {
+  display: flex;
+  justify-content: space-between;
+  width: 422.02px;
+}
+
+/* 여기까지가 공통 헤더 */
+.bestWrap#contents {
+  width: 100%;
+}
+
+#contents {
+  display: flex;
+  flex-direction: column;
+  width: 1280px;
+  margin: 0 auto;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+strong,
+b,
+th {
+  font-weight: normal;
+  font-family: "Pretendard", "SDNeoM", "notoM";
+}
+
+.h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  unicode-bidi: isolate;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.pageTitle {
+  width: 1280px;
+  margin: 60px auto 30px;
+  font-weight: 300;
+  font-size: 38px;
+  line-height: 1.11;
+}
+
+.body {
+  overflow-x: hidden;
+  height: 100%;
+  color: #000000;
+  font: 16px / 1.5 "Pretendard", "SDNeoL", "notoR", "Malgun Gothic", "맑은 고딕",
+    "돋움", sans-serif;
+  letter-spacing: -0.01em;
+  -webkit-text-size-adjust: none;
+}
+
+.selNavi ul {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 60px;
+}
+
+.selNavi ul li {
+  width: 33.33%;
+  margin-bottom: -1px;
+}
+
+.selNavi ul li > button {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 51px;
+  line-height: 51px;
+  color: #666666;
+  text-align: center;
+  border: 1px solid #eeeeee;
+  transition: color 0.75s, border-color 0.75s;
+}
+
+button {
+  overflow: visible;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  border-radius: 0;
+  color: inherit;
+  outline: none;
+}
+
+.selNavi ul li > button span {
+  display: block;
+  font-size: 16px;
+  line-height: 1.43em;
+  letter-spacing: -0.01em;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: noWrap;
+}
+
+/* button font */
+.selNavi ul li > button.active {
+  font-weight: 600;
+  color: #000000;
+}
+
+/* button box */
+.selNavi ul li > button.active {
+  z-index: 2;
+  border: 1px solid #000000;
+}
+
+li {
+  list-style: none;
+  display: list-item;
+  text-align: -webkit-match-parent;
+  unicode-bidi: isolate;
+}
+
+input,
+select,
+textarea,
+button,
+pre,
+a {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  letter-spacing: -0.01em;
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+}
+
+button {
+  appearance: auto;
+  text-rendering: auto;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding-block: 1px;
+  padding-inline: 6px;
+}
+
+/* location */
+.location {
+  position: relative;
+  z-index: 3;
+  border-top: 1px solid #f5f5f5;
+  border-bottom: 1px solid #dddddd;
+}
+
+.location:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.location > .inner {
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+
+.location .depth {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.location .depth:first-child:before {
+  display: none;
+}
+.location .depth:last-child .btn {
+  color: #000000;
+}
+.location .depth:last-child .btn:after {
+  background: url(../images/ui/arr_location_black.png) no-repeat 50% 50%;
+}
+
+.location .btn {
+  display: flex;
+  align-items: center;
+  height: 40px;
+  font-size: 12px;
+  color: #999999;
+}
+
+.location .btn:after {
+  display: block;
+  content: "";
+  width: 12px;
+  height: 12px;
+  margin-left: 5px;
+  background: url(../images/ui/arr_location_black.png) no-repeat 50% 50%;
+}
+
+.location .depth:before {
+  display: block;
+  content: "";
+  margin: 0 12px;
+  width: 12px;
+  height: 12px;
+  background: url(../images/ui/arr_location_depth.png) no-repeat 50% 50%;
+}
+
+.location .home {
+  width: 16px;
+  height: 16px;
+  font-size: 0;
+  background: url(../images/ico_location_home.png) no-repeat 50% 50%;
+}
+
+.location .depth {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  /* padding-inline-start: 40px; */
+  unicode-bidi: isolate;
+}
+
+.location .list {
+  display: none;
+  position: absolute;
+  overflow: hidden;
+  top: 39px;
+  left: 17px;
+  width: 170px;
+  max-height: 420px;
+  padding: 10px 0;
+  background: #fff;
+  border: 1px solid #aaaaaa;
+  white-space: nowrap;
+}
+
+/* button category */
+
+.bestWrap .tabBar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.tabBar {
+  margin-bottom: 25px;
+}
+
+.tabBar ul {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  gap: 10px;
+}
+
+.tabBar ul li.active button {
+  color: #000000;
+  border-color: #000000;
+  background-color: #ffffff;
+}
+
+.tabBar ul li.active button {
+  color: #000;
+  border-color: #000;
+  background: #fff;
+}
+
+.tabBar ul li button {
+  display: block;
+  padding: 6px 20px;
+  border: 1px solid #f5f5f5;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.29;
+  color: #999e9c;
+  white-space: nowrap;
+  cursor: pointer;
+  background: #f5f5f5;
+  transition: color 0.75s, border-color 0.75s, background-color 0.75s;
+}
+
+/* .tabBar ul li button {
+  display: block;
+  padding: 6px 20px;
+  border: 1px solid #f5f5f5;
+  border-radius: 16px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.29;
+  color: #999e9c;
+  white-space: nowrap;
+  cursor: pointer;
+  background: #f5f5f5;
+} */
+
+.bestWrap .date {
+  flex: none;
+  font-size: 14px;
+  line-height: 1.43em;
+  letter-spacing: -0.01em;
+  color: #999999;
+}
+
+/* product image */
+
+[class*="product_list"] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 20px;
+  align-items: flex-start;
+}
+
+[class*="product_list"] li {
+  position: relative;
+  flex: none;
+}
+
+[class*="product_list"] .nail {
+  position: relative;
+  overflow: hidden;
+}
+
+.product_list01 .nail {
+  width: 240px;
+  height: 320px;
+}
+
+.product_list01 .nail a {
+  height: 320px;
+}
+
+[class*="product_list"] a {
+  display: block;
+}
+
+.product_list01 li {
+  width: 240px;
+}
+
+[class*="product_list"] .nail .img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.product_list01 .nail .img img {
+  width: 240px;
+  height: 320px;
+}
+
+[class*="product_list"] .nail .img img {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+}
+
+img {
+  vertical-align: top;
+}
+
+fieldset,
+img {
+  border: 0;
+}
+
+img {
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+/* overflip */
+[class*="product_list"] .nail .img .overFlip {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: 1;
+  width: 100%;
+  height: 0;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: height 0.3s ease-in-out, opacity 0.5s ease-in-out;
+  will-change: height;
+}
+
+/* sticker */
+[class*="product_list"] .nail .sticker {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+
+span.sticker05 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  font-weight: 500;
+  font-size: 14px;
+  color: #ffffff;
+  background-color: #000000;
+}
+
+/* span[class*="sticker"] {
+  display: inline-flex;
+  align-items: center;
+  height: 18px;
+  padding: 0 5px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.4em;
+  letter-spacing: 0;
+} */
+
+/* button icon box  기능구현은 나중에 하자;;*/
+
+[class*="product_list"] .btnIconBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 3;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+  background-color: #00bc70;
+}
+
+.product_list01 .btnIconBox {
+  height: 60px;
+  gap: 45px;
+}
+
+.btnHeart {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background: url(../images/ui/icon_heart_white.png) no-repeat center;
+}
+
+.ir {
+  visibility: hidden;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  line-height: 0;
+  letter-spacing: 0;
+}
+/* 기능 아직 많은데 나중에 추가, 구현 */
+/* *********************************** */
+
+/* product intro */
+/* info */
+[class*="product_list"] .info {
+  margin-top: 20px;
+}
+
+/* name */
+[class*="product_list"] .info .name {
+  display: -webkit-box;
+  overflow: hidden;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.43em;
+  color: #666666;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* BEST */
+[class*="product_list"] .info .name strong {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* price */
+[class*="product_list"] .info .priceBox {
+  margin-top: 10px;
+}
+
+.priceBox {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.priceBox .price {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2em;
+  color: #000;
+}
+
+.priceBox .sale {
+  margin-left: 10px;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1.2em;
+  color: #ff0000;
+}
+
+.priceBox .cost {
+  margin-left: 15px;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.29em;
+  text-decoration-line: line-through;
+  color: #999;
+  letter-spacing: 0;
+}
+
+/* 증정 */
+[class*="product_list"] .stickerBox {
+  margin-top: 20px;
+}
+
+.stickerBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+}
+
+span[class*="sticker"] {
+  display: inline-flex;
+  align-items: center;
+  height: 18px;
+  padding: 0 5px;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1.4em;
+  letter-spacing: 0;
+}
+
+.sticker01 {
+  color: #00bc70;
+  background: #e0fbf0;
+}
+
+/* starGrade */
+[class*="product_list"] .starGrade {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+  font-size: 12px;
+  line-height: 1.33em;
+  color: #999e9c;
+}
