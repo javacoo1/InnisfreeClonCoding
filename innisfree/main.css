@@ -123,6 +123,7 @@
 }
 
 /* 여기까지가 공통 헤더 */
+
 .bestWrap#contents {
   width: 100%;
 }
@@ -201,6 +202,13 @@ strong {
   text-align: center;
   border: 1px solid #eeeeee;
   transition: color 0.75s, border-color 0.75s;
+}
+
+/* 마우스 가져다 대면 초록 */
+.selNavi ul li:hover button {
+  color: #00bc70;
+  border-color: #00bc70;
+  background-color: #ffffff;
 }
 
 button {
@@ -397,10 +405,11 @@ ul {
   background-color: #ffffff;
 }
 
-.tabBar ul li.active button {
-  color: #000;
-  border-color: #000;
-  background: #fff;
+/* 마우스 가져다 대면 초록 */
+.tabBar ul li button:hover {
+  color: #00bc70;
+  border-color: #00bc70;
+  background-color: #ffffff;
 }
 
 .tabBar ul li button {
@@ -525,6 +534,14 @@ img {
   will-change: height;
 }
 
+/* ****************************************************** */
+/* 기존 이미지를 hover했을 때 overflip의 높이와 투명도의 목표지를 지정 */
+[class*="product_list"] .nail .img:hover .overFlip {
+  height: 100%;
+  opacity: 1;
+}
+/* ****************************************************** */
+
 /* sticker */
 [class*="product_list"] .nail .sticker {
   position: absolute;
@@ -557,8 +574,6 @@ span.sticker05 {
   letter-spacing: 0;
 } */
 
-/* button icon box  기능구현은 나중에 하자;;*/
-
 [class*="product_list"] .btnIconBox {
   display: flex;
   align-items: center;
@@ -582,6 +597,19 @@ span.sticker05 {
   width: 32px;
   height: 32px;
   background: url(../images/ui/icon_heart_white.png) no-repeat center;
+}
+
+.product_list03 .btnIconBox .btnCart {
+  background: url(../images/ui/icon_cart_white.png) no-repeat center;
+}
+
+.product_list03 .btnIconBox .btnBuy {
+  background: url(../images/ui/icon_buy_white.png) no-repeat center;
+}
+
+/* nail에 커서를 올리면 hover를 실행 -> btnIconBox의 Y축이 -100% */
+.product_list01 .nail:hover .btnIconBox {
+  transform: translateY(-100%);
 }
 
 .ir {
@@ -693,6 +721,15 @@ span[class*="sticker"] {
   color: #999e9c;
 }
 
+[class*="product_list"] .starGrade:before {
+  display: block;
+  content: "";
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+  background: url(../images/ui/ico_star.png) no-repeat 50% 50%;
+}
+
 /* best banner */
 
 .bestBanner.sectionBox {
@@ -776,7 +813,16 @@ div {
 
 .bestBanner .swiper-wrapper .swiper-slide {
   margin-right: 20px;
+  overflow: hidden;
 }
+
+/* active 일때만 보이게 */
+/* .prdListBox .swiper-slide {
+  display: none;
+}
+.prdListBox .swiper-slide.active {
+  display: inline-block;
+} */
 
 .bestBanner.prdSwiper .progressbar {
   margin-top: 55px;
@@ -864,6 +910,10 @@ span[class*="sticker"] {
   transition: transform 0.3s;
 }
 
+.listEvent02 .item .evtImg img:hover {
+  transform: scale(1.1);
+}
+
 /* 여기서부터는 배너 아래 글씨조정 */
 .bestBanner .listEvent02 .item .cnt-area {
   height: auto;
@@ -912,6 +962,10 @@ span[class*="sticker"] {
   -webkit-box-orient: vertical;
 }
 
+.listEvent02 .item:hover .name {
+  color: #00bc70;
+}
+
 /* 배너  설명 그 아래 progressbar */
 .bestBanner.prdSwiper .progressbar {
   margin-top: 55px;
@@ -932,7 +986,18 @@ span[class*="sticker"] {
 .prdSwiper .progressbar .swiper-pagination-progressbar-fill {
   position: absolute;
   left: 0;
-  top: -1px;
+  top: 1px;
+  width: 100%;
+  height: 2px;
+  background-color: #000000;
+  transform: scale(0);
+  transform-origin: left top;
+}
+
+.swiper-scrollbar-drag {
+  position: absolute;
+  left: 0;
+  top: 1px;
   width: 100%;
   height: 2px;
   background-color: #000000;
@@ -982,3 +1047,954 @@ span[class*="sticker"] {
 .prdSwiper .slideControl .btnPrev {
   transform: rotate(180deg);
 }
+
+.termBetPandB {
+  height: 70px;
+}
+
+.termBetPandB2 {
+  height: 80px;
+}
+
+.backGray {
+  position: absolute;
+  top: 2654px;
+  width: 1000%;
+  height: 635px;
+  left: -500%;
+  background-color: #f5f5f5;
+  z-index: -1;
+}
+
+/* 배너 기능 구현 */
+
+/*********** 여기부터 FOR ME ***********/
+/* 오른쪽에 쇼핑로그 생김 */
+.forMeWarp {
+  position: relative;
+  display: flex;
+}
+
+/* 왼쪽 넓이를 맞춰서, 오른쪽에 찌그러져있던 쇼핑로그 크기랑 위치 맞춤 */
+.recommSection {
+  width: 800px;
+}
+
+.recommSection {
+  width: 800px;
+  padding: 0 0 100px;
+}
+
+.forMeWarp * {
+  box-sizing: border-box;
+}
+
+.recommSection .titleBox {
+  display: block;
+  position: relative;
+  margin: 0 40px 0 0;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.schSlide {
+  display: flex;
+  align-items: center;
+  margin-top: 16px;
+}
+
+/* 얘하니까 피부정보 등록하는 애들이 다 숨어버림 */
+.schSlideBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  right: -480px;
+  z-index: -1;
+  width: 480px;
+  height: 100%;
+  background: #fff;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* 여기부터는 피부정보 등록 기능 구현해야 보이는 부분인 듯 */
+.schSlideBox .schSlideTitle {
+  padding: 40px 40px 0;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33em;
+  letter-spacing: -0.01em;
+  color: #000000;
+}
+
+.schSlideBox .schSlideWrap {
+  flex: 1;
+  padding: 40px;
+}
+
+.schSlideBox .sortList {
+  margin-bottom: 30px;
+}
+
+.schSlideWrap .pdtSortSTit {
+  margin-bottom: 10px;
+  font-size: 12px;
+  line-height: 1.32em;
+  letter-spacing: -0.01em;
+  color: #999999;
+}
+
+.schSlideBox .sortList ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.schSlideBox .sortList label {
+  padding-left: 0;
+}
+
+.inputChk,
+.inputRadio {
+  position: relative;
+  display: inline-block;
+  margin-right: 25px;
+  padding-left: 30px;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.inputChk:last-child,
+.inputRadio:last-child {
+  margin-right: 0;
+}
+
+label,
+td img {
+  vertical-align: middle;
+}
+
+.inputChk input,
+.inputRadio input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.schSlideBox .sortList label input:checked + span {
+  color: #ffffff;
+  background-color: #00bc70;
+}
+
+.schSlideBox .sortList label span {
+  display: flex;
+  align-items: center;
+  height: 30px;
+  padding: 0 20px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.29em;
+  letter-spacing: -0.01em;
+  color: #aaaaaa;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+}
+
+.schSlideBox .bottoms .inputChk {
+  font-size: 14px;
+  line-height: 1.29em;
+  color: #666;
+}
+
+.inputChk > span:after {
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: url(../images/ui/bg_checkBox_off.png) no-repeat 50% 50%;
+  transition: all 0.2s;
+}
+
+.inputChk > span:after,
+.inputRadio > span:after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+}
+
+.schSlideBox .bottoms .txt {
+  margin: 5px 0 0 30px;
+  font-size: 14px;
+  line-height: 1.33em;
+  color: #999;
+}
+
+.schSlideBox .termsBox {
+  margin-top: 20px;
+  padding: 5px 15px 20px;
+  border-radius: 5px;
+  background: #f5f5f5;
+}
+
+.schSlideBox .termsBox .chk {
+  padding: 20px 0 0;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.29em;
+  color: #333;
+}
+
+.inputChk:last-child,
+.inputRadio:last-child {
+  margin-right: 0;
+}
+
+.inputChk input,
+.inputRadio input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.schSlideBox .btnWrap {
+  display: flex;
+  justify-content: space-between;
+  gap: 0;
+  width: 100%;
+  height: 60px;
+  margin: 0;
+}
+
+.btnWrap {
+  display: flex;
+  gap: 0 10px;
+  text-align: center;
+  justify-content: center;
+  margin-top: 60px;
+}
+
+.schSlideBox .btnWrap > * {
+  flex: 1;
+}
+
+.btnPri01 {
+  color: #ffffff;
+  background-color: #00bc70;
+}
+
+[class*="btnPri0"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  height: 60px;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+}
+
+.schSlideBox .btnClose {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 32px;
+  height: 32px;
+  font-size: 0;
+  background: url(../images/ui/ico_close32_black.png) no-repeat 50% 50%;
+}
+
+/* 추천해요 */
+.recommSection .titleBox .subTitle2 {
+  margin: 0 0 10px;
+}
+
+h3.subTitle2 {
+  margin-top: 60px;
+}
+
+.subTitle2 {
+  margin: 100px 0 20px;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.55;
+}
+
+/* 피부정보 등록 > */
+/* 얘 하니까 추천해요 오른쪽 끝으로 이동 */
+.forMeWarp .titleBox .btnMoreArr02 {
+  position: absolute;
+  right: 0;
+  top: 6px;
+  padding-right: 21px;
+  font-size: 14px;
+  line-height: 1.43;
+  background: url(../images/ui/arr_r16_black.png) no-repeat right center;
+}
+
+/* oo시에 고객님들이 가장 많이 찾고 있어요.의 여백 */
+.recommSection .contBox .prdSwiper:nth-of-type(1) .hBox {
+  margin-top: 60px;
+}
+
+.hBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 100px 0 30px;
+}
+
+/* oo시에 고객님들이 가장 많이 찾고 있어요.의 폰트 */
+.pageTitle2 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+}
+
+h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  unicode-bidi: isolate;
+}
+
+h4 {
+  display: block;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+  unicode-bidi: isolate;
+}
+
+/* 'oo시에'의 색깔 */
+.pageTitle2 .fnColor {
+  font-weight: 600;
+  color: #00bc70;
+}
+
+/* 가장 많이 등록된 피부정보 기준으로 보여드려요 */
+/* 최근 본 제품, 이벤트, 검색어에요 */
+.forMeWarp .hBox .desc,
+.forMeWarp .titleBox .desc {
+  font-size: 14px;
+  line-height: 1.43;
+  color: #999;
+}
+
+/* 건성피부, 모공/주름/탄력 버튼 */
+.forMeWarp .titleBox .btnBox {
+  margin-top: 10px;
+}
+
+/* 회색 네모버튼 됨 */
+.btnS012 {
+  color: #fff;
+  background-color: #999;
+}
+
+/* 버튼 디테일 */
+[class*="btnS0"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  height: 30px;
+  padding: 0 20px;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: -0.01em;
+  border-radius: 1px;
+}
+
+/* 상품영역 */
+[class*="product_list"] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 20px;
+  align-items: flex-start;
+}
+
+.product_list01 li {
+  width: 240px;
+}
+
+[class*="product_list"] li {
+  position: relative;
+  flex: none;
+}
+
+.prdSwiper .slide .product_list01,
+.promotion .slide .product_list01,
+.prdSpecial .slide .product_list02 {
+  flex-wrap: nowrap;
+  justify-content: initial;
+  gap: 0;
+}
+
+[class*="product_list"] .nail {
+  position: relative;
+  overflow: hidden;
+}
+
+[class*="product_list"] a {
+  display: block;
+}
+
+[class*="product_list"] .nail .img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+[class*="product_list"] .nail .img img {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+}
+
+[class*="product_list"] .nail .img .overFlip {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: 1;
+  width: 100%;
+  height: 0;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: height 0.3s ease-in-out, opacity 0.5s ease-in-out;
+  will-change: height;
+}
+
+[class*="product_list"] .btnIconBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  z-index: 3;
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+  background-color: #00bc70;
+}
+
+.product_list01 .btnIconBox button {
+  width: 32px;
+  height: 32px;
+}
+
+.btnCart {
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url(../images/ui/icon_cart_white.png) no-repeat center;
+  background-size: 100%;
+}
+
+.btnBuy {
+  display: inline-block;
+  width: 2.4rem;
+  height: 2.4rem;
+  background: url(../images/ui/icon_buy_white.png) no-repeat center;
+  background-size: 100%;
+}
+
+[class*="product_list"] a {
+  display: block;
+}
+
+/* info는 이전에 작성한 걸로 대체 가능한 듯 */
+
+[class*="product_list"] .nail .img .overFlip {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: 1;
+  width: 100%;
+  height: 0;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: height 0.3s ease-in-out, opacity 0.5s ease-in-out;
+  will-change: height;
+}
+
+[class*="product_list"] li {
+  position: relative;
+  flex: none;
+}
+
+.recommSection .prdSwiper .progressbar {
+  width: 760px;
+}
+
+/* 쇼핑로그 */
+.shopLogSection {
+  overflow: hidden;
+  position: sticky;
+  top: 8px;
+  display: flex;
+  flex-direction: column;
+  width: 480px;
+  height: 100%;
+  margin-top: -132px;
+  padding: 132px 0px 0 40px;
+  border: 1px solid #f5f5f5;
+  border-width: 0 1px;
+}
+
+.shopLogSection .titleBox {
+  margin-bottom: 40px;
+  flex: none;
+}
+
+.shopLogSection .titleBox .pageTitle2 {
+  margin: 0 0 5px;
+}
+
+[class*="Title"] .iconTooltip {
+  margin-left: 5px;
+}
+
+/* 쇼핑로그 옆에 초록원 */
+.btnTooltip2,
+.iconTooltip {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  font-size: 0;
+  vertical-align: middle;
+  background: url(../images/ui/ico_tooltip.png) no-repeat center;
+}
+
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+}
+
+.shopLogSection .contBox {
+  position: relative;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product_list04 {
+  gap: 10px 20px;
+}
+
+.shopLogSection .product_list04 {
+  position: relative;
+  flex: 1;
+  align-content: flex-start;
+  gap: 50px 0;
+  padding-bottom: 97px;
+}
+
+[class*="product_list"] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 20px;
+  align-items: flex-start;
+}
+
+.shopLogSection .product_list04::before {
+  content: "";
+  position: absolute;
+  left: 44px;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #eee;
+}
+
+/* 그 안에 놈들 */
+.product_list04 li {
+  width: 400px;
+}
+
+[class*="product_list"] li {
+  position: relative;
+  flex: none;
+}
+
+/* 사진이랑 그림 나란히 */
+.product_list04 li a {
+  display: flex;
+}
+
+/* 사진 틀만듬(그 안에 사진은 짤림) */
+.shopLogSection .schLEvn .nail {
+  width: 90px;
+  height: 60px;
+}
+
+/* 얘부터는 없어도 되는거 아님? */
+.product_list04 .nail {
+  width: 90px;
+  height: 120px;
+  background: #f5f5f5;
+}
+
+[class*="product_list"] .nail .img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.product_list04 li a .img::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  border: 1px solid #00bc70;
+  opacity: 0;
+  /* background: url(../images/ui/ico_plusG.png) no-repeat left bottom; */
+  transform: scale(50%);
+  transition: all 0.4s ease;
+}
+
+.product_list04 li a .img::after {
+  content: "";
+  opacity: 0;
+  display: block;
+  position: absolute;
+  left: 20%;
+  top: 50%;
+  width: 24px;
+  height: 24px;
+  transition: all 0.4s ease;
+  background: #00bc70 url(../images/ui/icon_plusW.png) no-repeat center center;
+}
+
+/* 얘 하니까 크기 맞음 */
+.product_list04 .nail .img img {
+  width: 100%;
+  height: 100%;
+}
+
+/* ? */
+[class*="product_list"] .nail .img img {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+}
+
+/* info */
+/* 애 하니까 오히려 글씨가 아래로 가서 별루  */
+.shopLogSection .schLEvn .info {
+  display: flex;
+  align-items: center;
+}
+
+/* 근데 얘랑하니까 또 맞음 */
+.product_list04 .info {
+  margin: 0 0 0 20px;
+  width: 290px;
+}
+
+/* 글씨 관련인데, 달라지는건 없음 */
+.shopLogSection .schLEvn .name {
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+}
+
+[class*="product_list"] .info .name {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.43em;
+  color: #666666;
+}
+
+/* 새로운 추천을 받고 싶어요 */
+/* 위치 맞춤 */
+.recommSection .btnSetBox {
+  margin-top: 40px;
+  text-align: center;
+}
+
+/* 내모박스 만들어줌, 폰트 굵어짐 */
+.recommSection .btnSetBox .btnM05 {
+  width: 340px;
+  font-weight: 600;
+  border: 1px solid #ddd;
+}
+
+.btnM05 {
+  color: #666666;
+  border: 1px solid #eeeeee;
+  background-color: #ffffff;
+}
+
+[class*="btnM0"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  position: relative;
+  height: 40px;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+
+.btnM05.icoRefresh:before {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+}
+
+.icoRefresh:before,
+.icoRefreshR:after {
+  display: block;
+  content: "";
+  flex: none;
+  background: url(../images/ui/ico_reset.png) no-repeat 50% 50%;
+  background-size: 100% 100% !important;
+}
+
+[class*="btnM0"] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+  position: relative;
+  height: 40px;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+
+/* 1/3 */
+.btnM05 .countPage {
+  display: flex;
+  position: absolute;
+  right: 21px;
+  top: 50%;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 1.33em;
+  letter-spacing: -0.01em;
+  color: #999999;
+  transform: translateY(-50%);
+}
+
+/* 같은 연령대 고객님들이 많이 검색하고 있어요. */
+.tabBar {
+  margin-bottom: 25px;
+}
+
+/* 1. 출석, 2. 출석체크 등이 사진 왼쪽에 옴 */
+.recommSection .tabContBox {
+  display: flex;
+}
+
+/* 숫자랑 글자가 나란히 */
+.recommSection .rankList {
+  width: 170px;
+  margin-right: 40px;
+  padding-left: 0;
+  border-top: 1px solid #f5f5f5;
+}
+
+ol {
+  display: block;
+  list-style-type: decimal;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+  unicode-bidi: isolate;
+}
+
+.recommSection .rankList li {
+  border-bottom: 1px solid #f5f5f5;
+}
+
+/* 여기서 비슷해짐 */
+.recommSection .rankList li button {
+  width: 170px;
+  padding: 16px 0;
+  font-size: 14px;
+  line-height: 1.43;
+  color: #999;
+  text-align: left;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+}
+
+/* 숫자랑 글자 간격 */
+/* 근데 좀 오른쪽으로 치우침. 오른쪽 완성해도 그러면 수동으로 조절하자 */
+.recommSection .rankList li button .num {
+  display: inline-block;
+  width: 32px;
+  margin-right: 5px;
+  text-align: center;
+}
+
+/* 자기 차례에서 아래에 검은줄 */
+.recommSection .rankList li.active {
+  border-bottom: 1px solid #000;
+}
+
+/* 자기 차례에서 볼드체 */
+.recommSection .rankList li.active button {
+  font-weight: 600;
+  color: #000;
+}
+
+/* 여기부터 오른쪽 제품들 */
+[class*="product_list"] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 20px;
+  align-items: flex-start;
+}
+
+/* 얘는 상품바뀔 때 계속 바뀜 */
+.recommSection .product_list03 li {
+  display: none;
+  gap: 0 20px;
+}
+
+.recommSection .product_list03 li.active {
+  display: flex;
+  gap: 0 20px;
+}
+
+/* 간격 맞춰서 한줄에 3개씩 */
+.product_list03 li {
+  width: 170px;
+}
+
+/* 얜 뭘까 */
+[class*="product_list"] li {
+  position: relative;
+  flex: none;
+}
+
+/* 사진틀 만들어짐 (사진은 짤림) */
+.product_list03 .nail {
+  width: 170px;
+  height: 227px;
+}
+
+[class*="product_list"] .nail {
+  position: relative;
+  overflow: hidden;
+}
+
+.product_list03 .nail a {
+  width: 100%;
+  height: 100%;
+}
+
+[class*="product_list"] a {
+  display: block;
+}
+
+[class*="product_list"] .nail .img {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* 얘까지 하니까 사진 크기 맞음 */
+.product_list03 .nail .img img {
+  width: 170px;
+  height: 227px;
+}
+
+[class*="product_list"] .nail .img img {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+}
+
+[class*="product_list"] .nail .img .overFlip {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: 1;
+  width: 100%;
+  height: 0;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: height 0.3s ease-in-out, opacity 0.5s ease-in-out;
+  will-change: height;
+}
+
+/* 해시박스 */
+.hashBox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.hashBox button {
+  display: inline-flex;
+  align-items: center;
+  height: 20px;
+  padding: 0 8px;
+  font-size: 10px;
+  line-height: 1.2em;
+  letter-spacing: -0.02em;
+  color: #009d5e;
+  border-radius: 100px;
+  background-color: #edfff8;
+}
+
+/* 얘는 좀 구현 하고싶다;;;;;;;;;;;;;;;;;; */
+[class*="product_list"] .nail .img .overFlip {
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  z-index: 1;
+  width: 100%;
+  height: 0;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: height 0.3s ease-in-out, opacity 0.5s ease-in-out;
+  will-change: height;
+}
+
+/* //contents */

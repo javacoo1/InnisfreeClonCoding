@@ -1,0 +1,4077 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="best.js" defer></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="main-space" id="header">
+        <div class="header-main">
+          <div class="logo">
+            <img
+              src="https://images.innisfree.co.kr/resources/web2/images/ui/logo_innisfree_evt.gif"
+              alt=""
+            />
+          </div>
+          <div class="search-container">
+            <input type="text" placeholder="Search..." class="search-input" />
+            <button class="search-button">
+              <img
+                src="https://images.innisfree.co.kr/resources/web2/images/ui/ico_search24_black.png"
+                alt=""
+              />
+            </button>
+          </div>
+          <div class="login-ex">
+            <div class="user-actions">
+              <div class="user-action">
+                <span class="icon"
+                  ><img
+                    src="https://images.innisfree.co.kr/resources/web2/images/ui/ico_login24_black.png"
+                    alt=""
+                /></span>
+                <span class="text">로그인</span>
+              </div>
+              <div class="user-action">
+                <span class="icon"
+                  ><img
+                    src="https://images.innisfree.co.kr/resources/web2/images/ui/ico_mypage24_black.png"
+                    alt=""
+                /></span>
+                <span class="text">마이페이지</span>
+              </div>
+              <div class="user-action">
+                <span class="icon"
+                  ><img
+                    src="https://images.innisfree.co.kr/resources/web2/images/ui/ico_cart24_black.png"
+                    alt=""
+                /></span>
+                <span class="text">장바구니</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <nav id="nav">
+        <div>카테고리</div>
+        <div id="nav-2">
+          <div>특가</div>
+          <div>이벤트</div>
+          <div><a href="best.html">베스트</a></div>
+          <div>쇼케이스</div>
+          <div><a href="forMe.html">For me</a></div>
+          <div>라이브</div>
+        </div>
+        <div>ABOUT</div>
+      </nav>
+
+      <!-- location -->
+      <div class="location">
+        <div class="inner">
+          <div class="depth"><a href="index.html" class="home">홈</a></div>
+
+          <div class="depth active">
+            <button type="button" class="btn" onmouseenter="locDepList();">
+              베스트
+            </button>
+            <ul
+              class="list"
+              tabindex="1"
+              style="display: block; overflow: hidden; outline: none"
+            >
+              <li>
+                <a href="/kr/ko/Product.do?tp=1&amp;catCd01=UA">카테고리</a>
+              </li>
+              <li><a href="/kr/ko/HotdealSpcPrcMain.do">특가</a></li>
+              <li><a href="/kr/ko/Event.do">이벤트</a></li>
+              <li><a href="/kr/ko/BestSellerList.do">베스트</a></li>
+              <li><a href="/kr/ko/GripLiveMain.do">라이브</a></li>
+              <li><a href="forMe.html">FOR ME</a></li>
+              <li><a href="/kr/ko/DirectPageAboutUs.do">ABOUT</a></li>
+              <li><a href="/kr/ko/CustMainPage.do">고객센터</a></li>
+              <li>
+                <a href="/kr/ko/MypageOnlineOrderList.do?reqOrdStatType=000"
+                  >마이페이지</a
+                >
+              </li>
+              <li>
+                <a href="/kr/ko/MypageBottleStaus.do" class="lk"
+                  >공병수거 캠페인
+                </a>
+              </li>
+              <li><a href="/kr/ko/GreenteaClubMembership.do">멤버십</a></li>
+            </ul>
+          </div>
+          <!-- 온라인전용관(OO), PLAY GREEN전용관(GM), 마이샵전용관(MS), ONSALE(NN) 숨김처리   -->
+        </div>
+      </div>
+
+      <!-- location -->
+      <div id="contents" class="bestWrap">
+        <h2 class="pageTitle">베스트</h2>
+
+        <div class="contWrap">
+          <!-- 기간별 분류 -->
+          <div class="selNavi">
+            <ul>
+              <li>
+                <button
+                  type="button"
+                  onclick="location.href='/kr/ko/BestSellerList.do?bestClCd=RC01'"
+                  class="active"
+                >
+                  <span><a href="best.html">실시간 베스트</a></span>
+                </button>
+              </li>
+              <li>
+                <button type="button" onclick="location.href='weeklyBest.html'">
+                  <span>주간 베스트</span>
+                </button>
+              </li>
+              <li>
+                <button
+                  type="button"
+                  onclick="location.href='/kr/ko/BestSellerList.do?bestClCd=RC03'"
+                >
+                  <span>월간 베스트</span>
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="tabBar">
+            <ul>
+              <li>
+                <button type="button" onclick="changeTab(this, 'bestAll.html')">
+                  전체
+                </button>
+              </li>
+              <li class="active">
+                <button
+                  type="button"
+                  onclick="changeTab(this, 'bestSkin.html')"
+                >
+                  스킨케어
+                </button>
+              </li>
+
+              <li>
+                <button
+                  type="button"
+                  onclick="changeTab(this, 'bestMake.html')"
+                >
+                  메이크업
+                </button>
+              </li>
+
+              <li>
+                <button type="button" onclick="changeTab(this, 'bestMan.html')">
+                  남성
+                </button>
+              </li>
+
+              <li>
+                <button type="button" onclick="changeTab(this, 'bestBhp.html')">
+                  바디/헤어/펫
+                </button>
+              </li>
+
+              <li>
+                <button type="button" onclick="changeTab(this, 'bestPs.html')">
+                  기획 세트
+                </button>
+              </li>
+
+              <li>
+                <button type="button" onclick="changeTab(this, 'bestCos.html')">
+                  미용소품
+                </button>
+              </li>
+            </ul>
+            <span class="date" id="nowTime">
+              <script>
+                function updateTime() {
+                  let today = new Date();
+                  let year = String(today.getFullYear());
+                  let month = String(today.getMonth() + 1).padStart(2, "0");
+                  let date = String(today.getDate()).padStart(2, "0");
+                  let hour = String(today.getHours()).padStart(2, "0");
+                  let minute = String(today.getUTCMinutes()).padStart(2, "0");
+
+                  const timeString = `${year}.${month}.${date} ${hour}:${minute} 기준`;
+                  document.getElementById("nowTime").textContent = timeString;
+                }
+                setInterval(updateTime, 100);
+                nowHours();
+              </script>
+            </span>
+          </div>
+
+          <!-- product images -->
+          <ul class="product_list01">
+            <li>
+              <div class="nail">
+                <a
+                  ap-prd-name="[대용량]그린티 히알루론산 수분크림 더블기획 [튜브]"
+                  ap-prd-id="37697"
+                  ap-prd-price="38000"
+                  ap-prd-position="1"
+                  ap-prd-list="BEST-전체"
+                  href="/kr/ko/ProductView.do?prdSeq=37697"
+                >
+                  <div class="sticker">
+                    <span class="sticker05">01</span>
+                  </div>
+                  <div class="img">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/37697_p_S_240.png?T202411161317"
+                      alt="[대용량]그린티 히알루론산 수분크림 더블기획 [튜브]"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                    <div class="overFlip">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/product/37697_p_S_240.png?T202411161317"
+                        onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                      />
+                    </div>
+                  </div>
+                </a>
+                <div class="btnIconBox">
+                  <button
+                    type="button"
+                    class="btnHeart"
+                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  >
+                    <span class="ir">찜</span></button
+                  ><!-- 비활성 -->
+
+                  <button
+                    type="button"
+                    class="btnCart"
+                    onclick="javascript:openPreview('37697', 'POPCART'); return false;"
+                  >
+                    <span class="ir">장바구니</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btnBuy"
+                    onclick="javascript:openPreview('37697', 'ORDER');return false;"
+                  >
+                    <span class="ir">결재</span>
+                  </button>
+                </div>
+              </div>
+              <a
+                ap-prd-name="[대용량]그린티 히알루론산 수분크림 더블기획 [튜브]"
+                ap-prd-id="37697"
+                ap-prd-price="38000"
+                ap-prd-position="1"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=37697"
+              >
+                <div class="info">
+                  <div class="name">
+                    <strong> BEST </strong>
+                    [대용량]그린티 히알루론산 수분크림 더블기획 [튜브]
+                  </div>
+                  <div class="priceBox">
+                    <strong class="price">38,000</strong>
+
+                    <span class="sale">50%</span>
+
+                    <span class="cost">76,000</span>
+                  </div>
+
+                  <div class="starGrade">
+                    <span class="grade">4.9 (13,541)</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <div class="nail">
+                <a
+                  ap-prd-name="그린티 씨드 세럼 80mL x 2개 패키지"
+                  ap-prd-id="37723"
+                  ap-prd-price="42160"
+                  ap-prd-position="2"
+                  ap-prd-list="BEST-전체"
+                  href="/kr/ko/ProductView.do?prdSeq=37723"
+                >
+                  <div class="sticker">
+                    <span class="sticker05">02</span>
+                  </div>
+                  <div class="img">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/37723_l_S_240.png?T202411161317"
+                      alt="그린티 씨드 세럼 80mL x 2개 패키지"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                    <div class="overFlip">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/product/37723_l_S_240.png?T202411161317"
+                        onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                      />
+                    </div>
+                  </div>
+                </a>
+                <div class="btnIconBox">
+                  <button
+                    type="button"
+                    class="btnHeart"
+                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  >
+                    <span class="ir">찜</span></button
+                  ><!-- 비활성 -->
+
+                  <button
+                    type="button"
+                    class="btnCart"
+                    onclick="javascript:openPreview('37723', 'POPCART'); return false;"
+                  >
+                    <span class="ir">장바구니</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btnBuy"
+                    onclick="javascript:openPreview('37723', 'ORDER');return false;"
+                  >
+                    <span class="ir">결재</span>
+                  </button>
+                </div>
+              </div>
+              <a
+                ap-prd-name="그린티 씨드 세럼 80mL x 2개 패키지"
+                ap-prd-id="37723"
+                ap-prd-price="42160"
+                ap-prd-position="2"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=37723"
+              >
+                <div class="info">
+                  <div class="name">
+                    <strong> BEST </strong>
+                    그린티 씨드 세럼 80mL x 2개 패키지
+                  </div>
+                  <div class="priceBox">
+                    <strong class="price">42,160</strong>
+
+                    <span class="sale">32%</span>
+
+                    <span class="cost">62,000</span>
+                  </div>
+
+                  <div class="stickerBox">
+                    <span class="sticker01">증정</span>
+                  </div>
+
+                  <div class="starGrade">
+                    <span class="grade">4.9 (24,886)</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <div class="nail">
+                <a
+                  ap-prd-name="레티놀 PDRN 앰플 25mL x 2개 패키지"
+                  ap-prd-id="37843"
+                  ap-prd-price="54400"
+                  ap-prd-position="3"
+                  ap-prd-list="BEST-전체"
+                  href="/kr/ko/ProductView.do?prdSeq=37843"
+                >
+                  <div class="sticker">
+                    <span class="sticker05">03</span>
+                  </div>
+                  <div class="img">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/37843_l_S_240.png?T202411161317"
+                      alt="레티놀 PDRN 앰플 25mL x 2개 패키지"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                    <div class="overFlip">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/product/37843_l_S_240.png?T202411161317"
+                        onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                      />
+                    </div>
+                  </div>
+                </a>
+                <div class="btnIconBox">
+                  <button
+                    type="button"
+                    class="btnHeart"
+                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  >
+                    <span class="ir">찜</span></button
+                  ><!-- 비활성 -->
+
+                  <button
+                    type="button"
+                    class="btnCart"
+                    onclick="javascript:openPreview('37843', 'POPCART'); return false;"
+                  >
+                    <span class="ir">장바구니</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btnBuy"
+                    onclick="javascript:openPreview('37843', 'ORDER');return false;"
+                  >
+                    <span class="ir">결재</span>
+                  </button>
+                </div>
+              </div>
+              <a
+                ap-prd-name="레티놀 PDRN 앰플 25mL x 2개 패키지"
+                ap-prd-id="37843"
+                ap-prd-price="54400"
+                ap-prd-position="3"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=37843"
+              >
+                <div class="info">
+                  <div class="name">
+                    <strong> BEST </strong>
+                    레티놀 PDRN 앰플 25mL x 2개 패키지
+                  </div>
+                  <div class="priceBox">
+                    <strong class="price">54,400</strong>
+
+                    <span class="sale">32%</span>
+
+                    <span class="cost">80,000</span>
+                  </div>
+
+                  <div class="stickerBox">
+                    <span class="sticker01">증정</span>
+                  </div>
+
+                  <div class="starGrade">
+                    <span class="grade">4.9 (8,286)</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <div class="nail">
+                <a
+                  ap-prd-name="화산송이 바하 모공 폼 클렌징 / 피지관리 지성 민감성 피지제거 딥클렌징"
+                  ap-prd-id="34513"
+                  ap-prd-price="6500"
+                  ap-prd-position="4"
+                  ap-prd-list="BEST-전체"
+                  href="/kr/ko/ProductView.do?prdSeq=34513"
+                >
+                  <div class="sticker">
+                    <span class="sticker05">04</span>
+                  </div>
+                  <div class="img">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/34513_p_S_240.jpg?T202411161317"
+                      alt="화산송이 바하 모공 폼 클렌징 / 피지관리 지성 민감성 피지제거 딥클렌징"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                    <div class="overFlip">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/product/34513_p_S_240.jpg?T202411161317"
+                        onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                      />
+                    </div>
+                  </div>
+                </a>
+                <div class="btnIconBox">
+                  <button
+                    type="button"
+                    class="btnHeart"
+                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  >
+                    <span class="ir">찜</span></button
+                  ><!-- 비활성 -->
+
+                  <button
+                    type="button"
+                    class="btnCart"
+                    onclick="javascript:openPreview('34513', 'POPCART'); return false;"
+                  >
+                    <span class="ir">장바구니</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btnBuy"
+                    onclick="javascript:openPreview('34513', 'ORDER');return false;"
+                  >
+                    <span class="ir">결재</span>
+                  </button>
+                </div>
+              </div>
+              <a
+                ap-prd-name="화산송이 바하 모공 폼 클렌징 / 피지관리 지성 민감성 피지제거 딥클렌징"
+                ap-prd-id="34513"
+                ap-prd-price="6500"
+                ap-prd-position="4"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=34513"
+              >
+                <div class="info">
+                  <div class="name">
+                    <strong> BEST </strong>
+                    화산송이 바하 모공 폼 클렌징 / 피지관리 지성 민감성 피지제거
+                    딥클렌징
+                  </div>
+                  <div class="priceBox">
+                    <strong class="price">6,500</strong>
+
+                    <span class="sale">~50%</span>
+
+                    <span class="cost">13,000</span>
+                  </div>
+
+                  <div class="starGrade">
+                    <span class="grade">4.9 (14,905)</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <div class="nail">
+                <a
+                  ap-prd-name="블랙티 앰플 30ml X 2개 패키지"
+                  ap-prd-id="37689"
+                  ap-prd-price="52000"
+                  ap-prd-position="5"
+                  ap-prd-list="BEST-전체"
+                  href="/kr/ko/ProductView.do?prdSeq=37689"
+                >
+                  <div class="sticker">
+                    <span class="sticker05">05</span>
+                  </div>
+                  <div class="img">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/37689_l_S_240.png?T202411161317"
+                      alt="블랙티 앰플 30ml X 2개 패키지"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                    <div class="overFlip">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/product/37689_l_S_240.png?T202411161317"
+                        onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                      />
+                    </div>
+                  </div>
+                </a>
+                <div class="btnIconBox">
+                  <button
+                    type="button"
+                    class="btnHeart"
+                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  >
+                    <span class="ir">찜</span></button
+                  ><!-- 비활성 -->
+
+                  <button
+                    type="button"
+                    class="btnCart"
+                    onclick="javascript:openPreview('37689', 'POPCART'); return false;"
+                  >
+                    <span class="ir">장바구니</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btnBuy"
+                    onclick="javascript:openPreview('37689', 'ORDER');return false;"
+                  >
+                    <span class="ir">결재</span>
+                  </button>
+                </div>
+              </div>
+              <a
+                ap-prd-name="블랙티 앰플 30ml X 2개 패키지"
+                ap-prd-id="37689"
+                ap-prd-price="52000"
+                ap-prd-position="5"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=37689"
+              >
+                <div class="info">
+                  <div class="name">
+                    <strong> BEST </strong>
+                    블랙티 앰플 30ml X 2개 패키지
+                  </div>
+                  <div class="priceBox">
+                    <strong class="price">52,000</strong>
+
+                    <span class="sale">35%</span>
+
+                    <span class="cost">80,000</span>
+                  </div>
+
+                  <div class="stickerBox">
+                    <span class="sticker01">증정</span>
+                  </div>
+
+                  <div class="starGrade">
+                    <span class="grade">4.9 (55,068)</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <div class="nail">
+                <a
+                  ap-prd-name="히알루론 수분 선크림 SPF50+ PA++++ / 히알루론산 유기자차"
+                  ap-prd-id="35223"
+                  ap-prd-price="14000"
+                  ap-prd-position="6"
+                  ap-prd-list="BEST-전체"
+                  href="/kr/ko/ProductView.do?prdSeq=35223"
+                >
+                  <div class="sticker">
+                    <span class="sticker05">06</span>
+                  </div>
+                  <div class="img">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/35223_k_S_240.jpg?T202411161317"
+                      alt="히알루론 수분 선크림 SPF50+ PA++++ / 히알루론산 유기자차"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                    <div class="overFlip">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/product/35223_k_S_240.jpg?T202411161317"
+                        onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                      />
+                    </div>
+                  </div>
+                </a>
+                <div class="btnIconBox">
+                  <button
+                    type="button"
+                    class="btnHeart"
+                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  >
+                    <span class="ir">찜</span></button
+                  ><!-- 비활성 -->
+
+                  <button
+                    type="button"
+                    class="btnCart"
+                    onclick="javascript:openPreview('35223', 'POPCART'); return false;"
+                  >
+                    <span class="ir">장바구니</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btnBuy"
+                    onclick="javascript:openPreview('35223', 'ORDER');return false;"
+                  >
+                    <span class="ir">결재</span>
+                  </button>
+                </div>
+              </div>
+              <a
+                ap-prd-name="히알루론 수분 선크림 SPF50+ PA++++ / 히알루론산 유기자차"
+                ap-prd-id="35223"
+                ap-prd-price="14000"
+                ap-prd-position="6"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=35223"
+              >
+                <div class="info">
+                  <div class="name">
+                    <strong> BEST </strong>
+                    히알루론 수분 선크림 SPF50+ PA++++ / 히알루론산 유기자차
+                  </div>
+                  <div class="priceBox">
+                    <strong class="price">14,000</strong>
+
+                    <span class="sale">~50%</span>
+
+                    <span class="cost">28,000</span>
+                  </div>
+
+                  <div class="starGrade">
+                    <span class="grade">4.8 (24,218)</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <div class="nail">
+                <a
+                  ap-prd-name="톤업 노세범 선스크린 EX SPF50+ PA++++"
+                  ap-prd-id="35222"
+                  ap-prd-price="12000"
+                  ap-prd-position="7"
+                  ap-prd-list="BEST-전체"
+                  href="/kr/ko/ProductView.do?prdSeq=35222"
+                >
+                  <div class="sticker">
+                    <span class="sticker05">07</span>
+                  </div>
+                  <div class="img">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/35222_p_S_240.jpg?T202411161317"
+                      alt="톤업 노세범 선스크린 EX SPF50+ PA++++"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                    <div class="overFlip">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/product/35222_p_S_240.jpg?T202411161317"
+                        onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                      />
+                    </div>
+                  </div>
+                </a>
+                <div class="btnIconBox">
+                  <button
+                    type="button"
+                    class="btnHeart"
+                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  >
+                    <span class="ir">찜</span></button
+                  ><!-- 비활성 -->
+
+                  <button
+                    type="button"
+                    class="btnCart"
+                    onclick="javascript:openPreview('35222', 'POPCART'); return false;"
+                  >
+                    <span class="ir">장바구니</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btnBuy"
+                    onclick="javascript:openPreview('35222', 'ORDER');return false;"
+                  >
+                    <span class="ir">결재</span>
+                  </button>
+                </div>
+              </div>
+              <a
+                ap-prd-name="톤업 노세범 선스크린 EX SPF50+ PA++++"
+                ap-prd-id="35222"
+                ap-prd-price="12000"
+                ap-prd-position="7"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=35222"
+              >
+                <div class="info">
+                  <div class="name">
+                    <strong> BEST </strong>
+                    톤업 노세범 선스크린 EX SPF50+ PA++++
+                  </div>
+                  <div class="priceBox">
+                    <strong class="price">12,000</strong>
+
+                    <span class="sale">~50%</span>
+
+                    <span class="cost">24,000</span>
+                  </div>
+
+                  <div class="starGrade">
+                    <span class="grade">4.7 (6,195)</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <div class="nail">
+                <a
+                  ap-prd-name="비타C 7일 톤업 세럼 30mL X 2개 패키지"
+                  ap-prd-id="37903"
+                  ap-prd-price="51680"
+                  ap-prd-position="8"
+                  ap-prd-list="BEST-전체"
+                  href="/kr/ko/ProductView.do?prdSeq=37903"
+                >
+                  <div class="sticker">
+                    <span class="sticker05">08</span>
+                  </div>
+                  <div class="img">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/37903_l_S_240.jpg?T202411161317"
+                      alt="비타C 7일 톤업 세럼 30mL X 2개 패키지"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                    <div class="overFlip">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/product/37903_l_S_240.jpg?T202411161317"
+                        onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                      />
+                    </div>
+                  </div>
+                </a>
+                <div class="btnIconBox">
+                  <button
+                    type="button"
+                    class="btnHeart"
+                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  >
+                    <span class="ir">찜</span></button
+                  ><!-- 비활성 -->
+
+                  <button
+                    type="button"
+                    class="btnCart"
+                    onclick="javascript:openPreview('37903', 'POPCART'); return false;"
+                  >
+                    <span class="ir">장바구니</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btnBuy"
+                    onclick="javascript:openPreview('37903', 'ORDER');return false;"
+                  >
+                    <span class="ir">결재</span>
+                  </button>
+                </div>
+              </div>
+              <a
+                ap-prd-name="비타C 7일 톤업 세럼 30mL X 2개 패키지"
+                ap-prd-id="37903"
+                ap-prd-price="51680"
+                ap-prd-position="8"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=37903"
+              >
+                <div class="info">
+                  <div class="name">
+                    <strong> BEST </strong>
+                    비타C 7일 톤업 세럼 30mL X 2개 패키지
+                  </div>
+                  <div class="priceBox">
+                    <strong class="price">51,680</strong>
+
+                    <span class="sale">32%</span>
+
+                    <span class="cost">76,000</span>
+                  </div>
+
+                  <div class="stickerBox">
+                    <span class="sticker01">증정</span>
+                  </div>
+
+                  <div class="starGrade">
+                    <span class="grade">4.8 (20,730)</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <div class="nail">
+                <a
+                  ap-prd-name="에너지 마스크"
+                  ap-prd-id="35117"
+                  ap-prd-price="2000"
+                  ap-prd-position="9"
+                  ap-prd-list="BEST-전체"
+                  href="/kr/ko/ProductView.do?prdSeq=35117"
+                >
+                  <div class="sticker">
+                    <span class="sticker05">09</span>
+                  </div>
+                  <div class="img">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/35117_p_S_240.jpg?T202411161317"
+                      alt="에너지 마스크"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                    <div class="overFlip">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/product/35117_p_S_240.jpg?T202411161317"
+                        onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                      />
+                    </div>
+                  </div>
+                </a>
+                <div class="btnIconBox">
+                  <button
+                    type="button"
+                    class="btnHeart"
+                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  >
+                    <span class="ir">찜</span></button
+                  ><!-- 비활성 -->
+
+                  <button
+                    type="button"
+                    class="btnCart"
+                    onclick="javascript:openPreview('35117', 'POPCART'); return false;"
+                  >
+                    <span class="ir">장바구니</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btnBuy"
+                    onclick="javascript:openPreview('35117', 'ORDER');return false;"
+                  >
+                    <span class="ir">결재</span>
+                  </button>
+                </div>
+              </div>
+              <a
+                ap-prd-name="에너지 마스크"
+                ap-prd-id="35117"
+                ap-prd-price="2000"
+                ap-prd-position="9"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=35117"
+              >
+                <div class="info">
+                  <div class="name">
+                    <strong> BEST </strong>
+                    에너지 마스크
+                  </div>
+                  <div class="priceBox">
+                    <strong class="price">2,000</strong>
+                  </div>
+
+                  <div class="starGrade">
+                    <span class="grade">4.9 (41,778)</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <div class="nail">
+                <a
+                  ap-prd-name="레티놀 시카 앰플 30ml x 2개 패키지"
+                  ap-prd-id="37688"
+                  ap-prd-price="54400"
+                  ap-prd-position="10"
+                  ap-prd-list="BEST-전체"
+                  href="/kr/ko/ProductView.do?prdSeq=37688"
+                >
+                  <div class="sticker">
+                    <span class="sticker05">10</span>
+                  </div>
+                  <div class="img">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/37688_l_S_240.png?T202411161317"
+                      alt="레티놀 시카 앰플 30ml x 2개 패키지"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                    <div class="overFlip">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/product/37688_l1_S_240.jpg?T202411161317"
+                        onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                      />
+                    </div>
+                  </div>
+                </a>
+                <div class="btnIconBox">
+                  <button
+                    type="button"
+                    class="btnHeart"
+                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  >
+                    <span class="ir">찜</span></button
+                  ><!-- 비활성 -->
+
+                  <button
+                    type="button"
+                    class="btnCart"
+                    onclick="javascript:openPreview('37688', 'POPCART'); return false;"
+                  >
+                    <span class="ir">장바구니</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btnBuy"
+                    onclick="javascript:openPreview('37688', 'ORDER');return false;"
+                  >
+                    <span class="ir">결재</span>
+                  </button>
+                </div>
+              </div>
+              <a
+                ap-prd-name="레티놀 시카 앰플 30ml x 2개 패키지"
+                ap-prd-id="37688"
+                ap-prd-price="54400"
+                ap-prd-position="10"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=37688"
+              >
+                <div class="info">
+                  <div class="name">
+                    <strong> BEST </strong>
+                    레티놀 시카 앰플 30ml x 2개 패키지
+                  </div>
+                  <div class="priceBox">
+                    <strong class="price">54,400</strong>
+
+                    <span class="sale">32%</span>
+
+                    <span class="cost">80,000</span>
+                  </div>
+
+                  <div class="stickerBox">
+                    <span class="sticker01">증정</span>
+                  </div>
+
+                  <div class="starGrade">
+                    <span class="grade">4.8 (51,482)</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <div class="nail">
+                <a
+                  ap-prd-name="그린티 아미노 수분 폼 클렌징"
+                  ap-prd-id="34511"
+                  ap-prd-price="6500"
+                  ap-prd-position="11"
+                  ap-prd-list="BEST-전체"
+                  href="/kr/ko/ProductView.do?prdSeq=34511"
+                >
+                  <div class="sticker">
+                    <span class="sticker05">11</span>
+                  </div>
+                  <div class="img">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/34511_p_S_240.jpg?T202411161317"
+                      alt="그린티 아미노 수분 폼 클렌징"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                    <div class="overFlip">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/product/34511_p_S_240.jpg?T202411161317"
+                        onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                      />
+                    </div>
+                  </div>
+                </a>
+                <div class="btnIconBox">
+                  <button
+                    type="button"
+                    class="btnHeart"
+                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  >
+                    <span class="ir">찜</span></button
+                  ><!-- 비활성 -->
+
+                  <button
+                    type="button"
+                    class="btnCart"
+                    onclick="javascript:openPreview('34511', 'POPCART'); return false;"
+                  >
+                    <span class="ir">장바구니</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btnBuy"
+                    onclick="javascript:openPreview('34511', 'ORDER');return false;"
+                  >
+                    <span class="ir">결재</span>
+                  </button>
+                </div>
+              </div>
+              <a
+                ap-prd-name="그린티 아미노 수분 폼 클렌징"
+                ap-prd-id="34511"
+                ap-prd-price="6500"
+                ap-prd-position="11"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=34511"
+              >
+                <div class="info">
+                  <div class="name">
+                    <strong> BEST </strong>
+                    그린티 아미노 수분 폼 클렌징
+                  </div>
+                  <div class="priceBox">
+                    <strong class="price">6,500</strong>
+
+                    <span class="sale">~50%</span>
+
+                    <span class="cost">13,000</span>
+                  </div>
+
+                  <div class="starGrade">
+                    <span class="grade">4.9 (13,644)</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <div class="nail">
+                <a
+                  ap-prd-name="인텐시브 롱래스팅 선스크린 EX SPF50+ PA++++"
+                  ap-prd-id="35220"
+                  ap-prd-price="12000"
+                  ap-prd-position="12"
+                  ap-prd-list="BEST-전체"
+                  href="/kr/ko/ProductView.do?prdSeq=35220"
+                >
+                  <div class="sticker">
+                    <span class="sticker05">12</span>
+                  </div>
+                  <div class="img">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/35220_p_S_240.jpg?T202411161317"
+                      alt="인텐시브 롱래스팅 선스크린 EX SPF50+ PA++++"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                    <div class="overFlip">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/product/35220_p_S_240.jpg?T202411161317"
+                        onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                      />
+                    </div>
+                  </div>
+                </a>
+                <div class="btnIconBox">
+                  <button
+                    type="button"
+                    class="btnHeart"
+                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  >
+                    <span class="ir">찜</span></button
+                  ><!-- 비활성 -->
+
+                  <button
+                    type="button"
+                    class="btnCart"
+                    onclick="javascript:openPreview('35220', 'POPCART'); return false;"
+                  >
+                    <span class="ir">장바구니</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btnBuy"
+                    onclick="javascript:openPreview('35220', 'ORDER');return false;"
+                  >
+                    <span class="ir">결재</span>
+                  </button>
+                </div>
+              </div>
+              <a
+                ap-prd-name="인텐시브 롱래스팅 선스크린 EX SPF50+ PA++++"
+                ap-prd-id="35220"
+                ap-prd-price="12000"
+                ap-prd-position="12"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=35220"
+              >
+                <div class="info">
+                  <div class="name">
+                    <strong> BEST </strong>
+                    인텐시브 롱래스팅 선스크린 EX SPF50+ PA++++
+                  </div>
+                  <div class="priceBox">
+                    <strong class="price">12,000</strong>
+
+                    <span class="sale">~50%</span>
+
+                    <span class="cost">24,000</span>
+                  </div>
+
+                  <div class="starGrade">
+                    <span class="grade">4.8 (4,560)</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <div class="nail">
+                <a
+                  ap-prd-name="포레스트 포맨 올인원 에센스 / 남자피부관리 남자스킨로션 민감성"
+                  ap-prd-id="35097"
+                  ap-prd-price="20300"
+                  ap-prd-position="13"
+                  ap-prd-list="BEST-전체"
+                  href="/kr/ko/ProductView.do?prdSeq=35097"
+                >
+                  <div class="sticker">
+                    <span class="sticker05">13</span>
+                  </div>
+                  <div class="img">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/35097_l_S_240.jpg?T202411161317"
+                      alt="포레스트 포맨 올인원 에센스 / 남자피부관리 남자스킨로션 민감성"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                    <div class="overFlip">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/product/35097_l1_S_240.jpg?T202411161317"
+                        onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                      />
+                    </div>
+                  </div>
+                </a>
+                <div class="btnIconBox">
+                  <button
+                    type="button"
+                    class="btnHeart"
+                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  >
+                    <span class="ir">찜</span></button
+                  ><!-- 비활성 -->
+
+                  <button
+                    type="button"
+                    class="btnCart"
+                    onclick="javascript:openPreview('35097', 'POPCART'); return false;"
+                  >
+                    <span class="ir">장바구니</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btnBuy"
+                    onclick="javascript:openPreview('35097', 'ORDER');return false;"
+                  >
+                    <span class="ir">결재</span>
+                  </button>
+                </div>
+              </div>
+              <a
+                ap-prd-name="포레스트 포맨 올인원 에센스 / 남자피부관리 남자스킨로션 민감성"
+                ap-prd-id="35097"
+                ap-prd-price="20300"
+                ap-prd-position="13"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=35097"
+              >
+                <div class="info">
+                  <div class="name">
+                    <strong> BEST </strong>
+                    포레스트 포맨 올인원 에센스 / 남자피부관리 남자스킨로션
+                    민감성
+                  </div>
+                  <div class="priceBox">
+                    <strong class="price">20,300</strong>
+
+                    <span class="sale">30%</span>
+
+                    <span class="cost">29,000</span>
+                  </div>
+
+                  <div class="starGrade">
+                    <span class="grade">4.9 (4,489)</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <div class="nail">
+                <a
+                  ap-prd-name="유브이 액티브 포어리스 선스크린 SPF50+ PA++++"
+                  ap-prd-id="34618"
+                  ap-prd-price="14000"
+                  ap-prd-position="14"
+                  ap-prd-list="BEST-전체"
+                  href="/kr/ko/ProductView.do?prdSeq=34618"
+                >
+                  <div class="sticker">
+                    <span class="sticker05">14</span>
+                  </div>
+                  <div class="img">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/34618_k_S_240.jpg?T202411161317"
+                      alt="유브이 액티브 포어리스 선스크린 SPF50+ PA++++"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                    <div class="overFlip">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/product/34618_k_S_240.jpg?T202411161317"
+                        onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                      />
+                    </div>
+                  </div>
+                </a>
+                <div class="btnIconBox">
+                  <button
+                    type="button"
+                    class="btnHeart"
+                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  >
+                    <span class="ir">찜</span></button
+                  ><!-- 비활성 -->
+
+                  <button
+                    type="button"
+                    class="btnCart"
+                    onclick="javascript:openPreview('34618', 'POPCART'); return false;"
+                  >
+                    <span class="ir">장바구니</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btnBuy"
+                    onclick="javascript:openPreview('34618', 'ORDER');return false;"
+                  >
+                    <span class="ir">결재</span>
+                  </button>
+                </div>
+              </div>
+              <a
+                ap-prd-name="유브이 액티브 포어리스 선스크린 SPF50+ PA++++"
+                ap-prd-id="34618"
+                ap-prd-price="14000"
+                ap-prd-position="14"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=34618"
+              >
+                <div class="info">
+                  <div class="name">
+                    <strong> BEST </strong>
+                    유브이 액티브 포어리스 선스크린 SPF50+ PA++++
+                  </div>
+                  <div class="priceBox">
+                    <strong class="price">14,000</strong>
+
+                    <span class="sale">~50%</span>
+
+                    <span class="cost">28,000</span>
+                  </div>
+
+                  <div class="starGrade">
+                    <span class="grade">4.8 (5,759)</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <div class="nail">
+                <a
+                  ap-prd-name="올리브 비타민 E 리얼 폼 클렌징 "
+                  ap-prd-id="36923"
+                  ap-prd-price="7000"
+                  ap-prd-position="15"
+                  ap-prd-list="BEST-전체"
+                  href="/kr/ko/ProductView.do?prdSeq=36923"
+                >
+                  <div class="sticker">
+                    <span class="sticker05">15</span>
+                  </div>
+                  <div class="img">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/36923_p_S_240.jpg?T202411161317"
+                      alt="올리브 비타민 E 리얼 폼 클렌징 "
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                    <div class="overFlip">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/product/36923_p_S_240.jpg?T202411161317"
+                        onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                      />
+                    </div>
+                  </div>
+                </a>
+                <div class="btnIconBox">
+                  <button
+                    type="button"
+                    class="btnHeart"
+                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  >
+                    <span class="ir">찜</span></button
+                  ><!-- 비활성 -->
+
+                  <button
+                    type="button"
+                    class="btnCart"
+                    onclick="javascript:openPreview('36923', 'POPCART'); return false;"
+                  >
+                    <span class="ir">장바구니</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btnBuy"
+                    onclick="javascript:openPreview('36923', 'ORDER');return false;"
+                  >
+                    <span class="ir">결재</span>
+                  </button>
+                </div>
+              </div>
+              <a
+                ap-prd-name="올리브 비타민 E 리얼 폼 클렌징 "
+                ap-prd-id="36923"
+                ap-prd-price="7000"
+                ap-prd-position="15"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=36923"
+              >
+                <div class="info">
+                  <div class="name">
+                    <strong> BEST </strong>
+                    올리브 비타민 E 리얼 폼 클렌징
+                  </div>
+                  <div class="priceBox">
+                    <strong class="price">7,000</strong>
+
+                    <span class="sale">~50%</span>
+
+                    <span class="cost">14,000</span>
+                  </div>
+
+                  <div class="starGrade">
+                    <span class="grade">4.8 (1,439)</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <div class="nail">
+                <a
+                  ap-prd-name="콜라겐 그린티 세라마이드 탄력장벽 크림 50mL + 리필"
+                  ap-prd-id="36920"
+                  ap-prd-price="43550"
+                  ap-prd-position="16"
+                  ap-prd-list="BEST-전체"
+                  href="/kr/ko/ProductView.do?prdSeq=36920"
+                >
+                  <div class="sticker">
+                    <span class="sticker05">16</span>
+                  </div>
+                  <div class="img">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/36920_p_S_240.png?T202411161317"
+                      alt="콜라겐 그린티 세라마이드 탄력장벽 크림 50mL + 리필"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                    <div class="overFlip">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/product/36920_p_S_240.png?T202411161317"
+                        onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                      />
+                    </div>
+                  </div>
+                </a>
+                <div class="btnIconBox">
+                  <button
+                    type="button"
+                    class="btnHeart"
+                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  >
+                    <span class="ir">찜</span></button
+                  ><!-- 비활성 -->
+
+                  <button
+                    type="button"
+                    class="btnCart"
+                    onclick="javascript:openPreview('36920', 'POPCART'); return false;"
+                  >
+                    <span class="ir">장바구니</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btnBuy"
+                    onclick="javascript:openPreview('36920', 'ORDER');return false;"
+                  >
+                    <span class="ir">결재</span>
+                  </button>
+                </div>
+              </div>
+              <a
+                ap-prd-name="콜라겐 그린티 세라마이드 탄력장벽 크림 50mL + 리필"
+                ap-prd-id="36920"
+                ap-prd-price="43550"
+                ap-prd-position="16"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=36920"
+              >
+                <div class="info">
+                  <div class="name">
+                    <strong> BEST </strong>
+                    콜라겐 그린티 세라마이드 탄력장벽 크림 50mL + 리필
+                  </div>
+                  <div class="priceBox">
+                    <strong class="price">43,550</strong>
+
+                    <span class="sale">35%</span>
+
+                    <span class="cost">67,000</span>
+                  </div>
+
+                  <div class="stickerBox">
+                    <span class="sticker01">증정</span>
+                  </div>
+
+                  <div class="starGrade">
+                    <span class="grade">4.9 (16,933)</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <div class="nail">
+                <a
+                  ap-prd-name="그린티 히알루론산 수분 선세럼 SPF50+ PA++++ / 속광 화잘먹 "
+                  ap-prd-id="37267"
+                  ap-prd-price="14000"
+                  ap-prd-position="17"
+                  ap-prd-list="BEST-전체"
+                  href="/kr/ko/ProductView.do?prdSeq=37267"
+                >
+                  <div class="sticker">
+                    <span class="sticker05">17</span>
+                  </div>
+                  <div class="img">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/37267_p_S_240.jpg?T202411161317"
+                      alt="그린티 히알루론산 수분 선세럼 SPF50+ PA++++ / 속광 화잘먹 "
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                    <div class="overFlip">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/product/37267_p1_S_240.jpg?T202411161317"
+                        onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                      />
+                    </div>
+                  </div>
+                </a>
+                <div class="btnIconBox">
+                  <button
+                    type="button"
+                    class="btnHeart"
+                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  >
+                    <span class="ir">찜</span></button
+                  ><!-- 비활성 -->
+
+                  <button
+                    type="button"
+                    class="btnCart"
+                    onclick="javascript:openPreview('37267', 'POPCART'); return false;"
+                  >
+                    <span class="ir">장바구니</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btnBuy"
+                    onclick="javascript:openPreview('37267', 'ORDER');return false;"
+                  >
+                    <span class="ir">결재</span>
+                  </button>
+                </div>
+              </div>
+              <a
+                ap-prd-name="그린티 히알루론산 수분 선세럼 SPF50+ PA++++ / 속광 화잘먹 "
+                ap-prd-id="37267"
+                ap-prd-price="14000"
+                ap-prd-position="17"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=37267"
+              >
+                <div class="info">
+                  <div class="name">
+                    <strong> BEST </strong>
+                    그린티 히알루론산 수분 선세럼 SPF50+ PA++++ / 속광 화잘먹
+                  </div>
+                  <div class="priceBox">
+                    <strong class="price">14,000</strong>
+
+                    <span class="sale">~50%</span>
+
+                    <span class="cost">28,000</span>
+                  </div>
+
+                  <div class="starGrade">
+                    <span class="grade">4.8 (4,581)</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <div class="nail">
+                <a
+                  ap-prd-name="블랙티 유스 인핸싱 앰플 마스크"
+                  ap-prd-id="35116"
+                  ap-prd-price="5000"
+                  ap-prd-position="18"
+                  ap-prd-list="BEST-전체"
+                  href="/kr/ko/ProductView.do?prdSeq=35116"
+                >
+                  <div class="sticker">
+                    <span class="sticker05">18</span>
+                  </div>
+                  <div class="img">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/35116_p_S_240.jpg?T202411161317"
+                      alt="블랙티 유스 인핸싱 앰플 마스크"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                    <div class="overFlip">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/product/35116_p_S_240.jpg?T202411161317"
+                        onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                      />
+                    </div>
+                  </div>
+                </a>
+                <div class="btnIconBox">
+                  <button
+                    type="button"
+                    class="btnHeart"
+                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  >
+                    <span class="ir">찜</span></button
+                  ><!-- 비활성 -->
+
+                  <button
+                    type="button"
+                    class="btnCart"
+                    onclick="javascript:openPreview('35116', 'POPCART'); return false;"
+                  >
+                    <span class="ir">장바구니</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btnBuy"
+                    onclick="javascript:openPreview('35116', 'ORDER');return false;"
+                  >
+                    <span class="ir">결재</span>
+                  </button>
+                </div>
+              </div>
+              <a
+                ap-prd-name="블랙티 유스 인핸싱 앰플 마스크"
+                ap-prd-id="35116"
+                ap-prd-price="5000"
+                ap-prd-position="18"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=35116"
+              >
+                <div class="info">
+                  <div class="name">
+                    <strong> BEST </strong>
+                    블랙티 유스 인핸싱 앰플 마스크
+                  </div>
+                  <div class="priceBox">
+                    <strong class="price">5,000</strong>
+                  </div>
+
+                  <div class="starGrade">
+                    <span class="grade">4.9 (6,794)</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <div class="nail">
+                <a
+                  ap-prd-name="블랙티 유스 앰플[대용량] 50mL + 블랙티 에센스[대용량] 145mL"
+                  ap-prd-id="37023"
+                  ap-prd-price="67600"
+                  ap-prd-position="19"
+                  ap-prd-list="BEST-전체"
+                  href="/kr/ko/ProductView.do?prdSeq=37023"
+                >
+                  <div class="sticker">
+                    <span class="sticker05">19</span>
+                  </div>
+                  <div class="img">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/37023_l_S_240.png?T202411161317"
+                      alt="블랙티 유스 앰플[대용량] 50mL + 블랙티 에센스[대용량] 145mL"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                    <div class="overFlip">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/product/37023_l_S_240.png?T202411161317"
+                        onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                      />
+                    </div>
+                  </div>
+                </a>
+                <div class="btnIconBox">
+                  <button
+                    type="button"
+                    class="btnHeart"
+                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  >
+                    <span class="ir">찜</span></button
+                  ><!-- 비활성 -->
+
+                  <button
+                    type="button"
+                    class="btnCart"
+                    onclick="javascript:openPreview('37023', 'POPCART'); return false;"
+                  >
+                    <span class="ir">장바구니</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btnBuy"
+                    onclick="javascript:openPreview('37023', 'ORDER');return false;"
+                  >
+                    <span class="ir">결재</span>
+                  </button>
+                </div>
+              </div>
+              <a
+                ap-prd-name="블랙티 유스 앰플[대용량] 50mL + 블랙티 에센스[대용량] 145mL"
+                ap-prd-id="37023"
+                ap-prd-price="67600"
+                ap-prd-position="19"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=37023"
+              >
+                <div class="info">
+                  <div class="name">
+                    <strong> BEST </strong>
+                    블랙티 유스 앰플[대용량] 50mL + 블랙티 에센스[대용량] 145mL
+                  </div>
+                  <div class="priceBox">
+                    <strong class="price">67,600</strong>
+
+                    <span class="sale">35%</span>
+
+                    <span class="cost">104,000</span>
+                  </div>
+
+                  <div class="stickerBox">
+                    <span class="sticker01">증정</span>
+                  </div>
+
+                  <div class="starGrade">
+                    <span class="grade">4.9 (25)</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+
+            <li>
+              <div class="nail">
+                <a
+                  ap-prd-name="납작 아이브로우 펜슬"
+                  ap-prd-id="35100"
+                  ap-prd-price="2750"
+                  ap-prd-position="20"
+                  ap-prd-list="BEST-전체"
+                  href="/kr/ko/ProductView.do?prdSeq=35100"
+                >
+                  <div class="sticker">
+                    <span class="sticker05">20</span>
+                  </div>
+                  <div class="img">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/35100_p_S_240.jpg?T202411161317"
+                      alt="납작 아이브로우 펜슬"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                    <div class="overFlip">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/product/35100_p_S_240.jpg?T202411161317"
+                        onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                      />
+                    </div>
+                  </div>
+                </a>
+                <div class="btnIconBox">
+                  <button
+                    type="button"
+                    class="btnHeart"
+                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  >
+                    <span class="ir">찜</span></button
+                  ><!-- 비활성 -->
+
+                  <button
+                    type="button"
+                    class="btnCart"
+                    onclick="javascript:openPreview('35100', 'POPCART'); return false;"
+                  >
+                    <span class="ir">장바구니</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    class="btnBuy"
+                    onclick="javascript:openPreview('35100', 'ORDER');return false;"
+                  >
+                    <span class="ir">결재</span>
+                  </button>
+                </div>
+              </div>
+              <a
+                ap-prd-name="납작 아이브로우 펜슬"
+                ap-prd-id="35100"
+                ap-prd-price="2750"
+                ap-prd-position="20"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=35100"
+              >
+                <div class="info">
+                  <div class="name">
+                    <strong> BEST </strong>
+                    납작 아이브로우 펜슬
+                  </div>
+                  <div class="priceBox">
+                    <strong class="price">2,750</strong>
+
+                    <span class="sale">~50%</span>
+
+                    <span class="cost">5,500</span>
+                  </div>
+
+                  <div class="starGrade">
+                    <span class="grade">4.8 (34,297)</span>
+                  </div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- best banner -->
+
+        <!-- 수동으로 여백 조절 -->
+        <div class="termBetPandB"></div>
+        <!--  -->
+
+        <section class="sectionBox bestBanner prdSwiper">
+          <div
+            class="slide swiper-container-initialized swiper-container-horizontal swiper-container-autoheight"
+          >
+            <ul
+              class="listEvent02 swiper-wrapper"
+              style="
+                transition-duration: 0ms;
+                transform: translate3d(-5200px, 0px, 0px);
+                height: 361px;
+              "
+            >
+              <li
+                class="swiper-slide swiper-slide-duplicate"
+                data-swiper-slide-index="6"
+                style="width: 413.333px; margin-right: 20px"
+              >
+                <div class="item">
+                  <a
+                    href="/kr/ko/EventView.do?eventSeq=3517&amp;procStat=&amp;channelTyp="
+                  >
+                    <span class="sticker04">쇼핑혜택</span>
+
+                    <div class="evtImg">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/event/3517_0.jpg?T202411161457"
+                        onerror="this.src='/kr/ko/resources/error/img/600x396.png'"
+                        alt=""
+                      />
+                    </div>
+                    <div class="cnt-area">
+                      <div class="date">24.7.1</div>
+                      <div class="name">
+                        신규회원만 받는 블랙프라이데이 70% 초초특가
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </li>
+              <li
+                class="swiper-slide swiper-slide-duplicate"
+                data-swiper-slide-index="7"
+                style="width: 413.333px; margin-right: 20px"
+              >
+                <div class="item">
+                  <a
+                    href="https://www.innisfree.com/kr/ko/EventView.do?eventSeq=3876#navTaget06"
+                  >
+                    <span class="sticker04">쇼핑혜택</span>
+
+                    <div class="evtImg">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/event/3915_0.jpg?T202411161457"
+                        onerror="this.src='/kr/ko/resources/error/img/600x396.png'"
+                        alt=""
+                      />
+                    </div>
+                    <div class="cnt-area">
+                      <div class="date">24.11.13</div>
+                      <div class="name">
+                        피부노화 걱정 끝! 안티에이징케어 ~35%
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </li>
+              <li
+                class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev"
+                data-swiper-slide-index="8"
+                style="width: 413.333px; margin-right: 20px"
+              >
+                <div class="item">
+                  <a
+                    href="https://www.innisfree.com/kr/ko/HotdealSpcPrcMain.do?inmPromNo=174"
+                  >
+                    <span class="sticker04">쇼핑혜택</span>
+
+                    <div class="evtImg">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/event/3909_0.jpg?T202411161457"
+                        onerror="this.src='/kr/ko/resources/error/img/600x396.png'"
+                        alt=""
+                      />
+                    </div>
+                    <div class="cnt-area">
+                      <div class="date">24.11.6</div>
+                      <div class="name">
+                        매일쓰는 폼클렌징 2개이상 구매시 50% 할인
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </li>
+
+              <li
+                class="swiper-slide swiper-slide-duplicate-active"
+                data-swiper-slide-index="0"
+                style="width: 413.333px; margin-right: 20px"
+              >
+                <div class="item">
+                  <a
+                    href="/kr/ko/EventView.do?eventSeq=3856&amp;procStat=&amp;channelTyp="
+                  >
+                    <span class="sticker04">쇼핑혜택</span>
+
+                    <div class="evtImg">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/event/3856_0.jpg?T202411161457"
+                        onerror="this.src='/kr/ko/resources/error/img/600x396.png'"
+                        alt=""
+                      />
+                    </div>
+                    <div class="cnt-area">
+                      <div class="date">24.11.6</div>
+                      <div class="name">
+                        1년에 단 한번 블랙프라이데이 ~70%+9천원 혜택
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </li>
+
+              <li
+                class="swiper-slide swiper-slide-duplicate-next"
+                data-swiper-slide-index="1"
+                style="width: 413.333px; margin-right: 20px"
+              >
+                <div class="item">
+                  <a
+                    href="/kr/ko/EventView.do?eventSeq=3879&amp;procStat=&amp;channelTyp="
+                  >
+                    <span class="sticker04">쇼핑혜택</span>
+
+                    <div class="evtImg">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/event/3879_0.jpg?T202411161457"
+                        onerror="this.src='/kr/ko/resources/error/img/600x396.png'"
+                        alt=""
+                      />
+                    </div>
+                    <div class="cnt-area">
+                      <div class="date">24.11.6</div>
+                      <div class="name">
+                        우주급 증정 추가! 내가 쓰는 앰플&amp;크림 1개 용량 더
+                        증정
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </li>
+
+              <li
+                class="swiper-slide"
+                data-swiper-slide-index="2"
+                style="width: 413.333px; margin-right: 20px"
+              >
+                <div class="item">
+                  <a
+                    href="/kr/ko/EventView.do?eventSeq=3880&amp;procStat=&amp;channelTyp="
+                  >
+                    <span class="sticker04">쇼핑혜택</span>
+
+                    <div class="evtImg">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/event/3880_0.jpg?T202411161457"
+                        onerror="this.src='/kr/ko/resources/error/img/600x396.png'"
+                        alt=""
+                      />
+                    </div>
+                    <div class="cnt-area">
+                      <div class="date">24.11.13</div>
+                      <div class="name">
+                        ★선착순한정수량 미니니 구름담요 선착순 4,900원
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </li>
+
+              <li
+                class="swiper-slide"
+                data-swiper-slide-index="3"
+                style="width: 413.333px; margin-right: 20px"
+              >
+                <div class="item">
+                  <a
+                    href="https://www.innisfree.com/kr/ko/joinEvent/viewJoinEvent.do?eventSeq=92"
+                  >
+                    <span class="sticker04">쇼핑혜택</span>
+
+                    <div class="evtImg">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/event/3882_0.jpg?T202411161457"
+                        onerror="this.src='/kr/ko/resources/error/img/600x396.png'"
+                        alt=""
+                      />
+                    </div>
+                    <div class="cnt-area">
+                      <div class="date">24.11.13</div>
+                      <div class="name">
+                        공식 온라인몰&amp;매장에서 7만원 이상 구매하고
+                        뷰티포인트 7천P 받자
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </li>
+
+              <li
+                class="swiper-slide"
+                data-swiper-slide-index="4"
+                style="width: 413.333px; margin-right: 20px"
+              >
+                <div class="item">
+                  <a
+                    href="/kr/ko/EventView.do?eventSeq=3876&amp;procStat=&amp;channelTyp="
+                  >
+                    <span class="sticker04">쇼핑혜택</span>
+
+                    <div class="evtImg">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/event/3876_0.jpg?T202411161457"
+                        onerror="this.src='/kr/ko/resources/error/img/600x396.png'"
+                        alt=""
+                      />
+                    </div>
+                    <div class="cnt-area">
+                      <div class="date">24.11.13</div>
+                      <div class="name">
+                        11월 블프세일 클리어런스 특가 up to 70%
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </li>
+
+              <li
+                class="swiper-slide"
+                data-swiper-slide-index="5"
+                style="width: 413.333px; margin-right: 20px"
+              >
+                <div class="item">
+                  <a
+                    href="/kr/ko/EventView.do?eventSeq=3884&amp;procStat=&amp;channelTyp="
+                  >
+                    <span class="sticker04">체험/리뷰</span>
+
+                    <div class="evtImg">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/event/3884_0.jpg?T202411161457"
+                        onerror="this.src='/kr/ko/resources/error/img/600x396.png'"
+                        alt=""
+                      />
+                    </div>
+                    <div class="cnt-area">
+                      <div class="date">24.11.13</div>
+                      <div class="name">
+                        살까 말까 고민될땐, 그린티/블랙티 0원 체험단
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </li>
+
+              <li
+                class="swiper-slide"
+                data-swiper-slide-index="6"
+                style="width: 413.333px; margin-right: 20px"
+              >
+                <div class="item">
+                  <a
+                    href="/kr/ko/EventView.do?eventSeq=3517&amp;procStat=&amp;channelTyp="
+                  >
+                    <span class="sticker04">쇼핑혜택</span>
+
+                    <div class="evtImg">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/event/3517_0.jpg?T202411161457"
+                        onerror="this.src='/kr/ko/resources/error/img/600x396.png'"
+                        alt=""
+                      />
+                    </div>
+                    <div class="cnt-area">
+                      <div class="date">24.7.1</div>
+                      <div class="name">
+                        신규회원만 받는 블랙프라이데이 70% 초초특가
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </li>
+
+              <li
+                class="swiper-slide"
+                data-swiper-slide-index="7"
+                style="width: 413.333px; margin-right: 20px"
+              >
+                <div class="item">
+                  <a
+                    href="https://www.innisfree.com/kr/ko/EventView.do?eventSeq=3876#navTaget06"
+                  >
+                    <span class="sticker04">쇼핑혜택</span>
+
+                    <div class="evtImg">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/event/3915_0.jpg?T202411161457"
+                        onerror="this.src='/kr/ko/resources/error/img/600x396.png'"
+                        alt=""
+                      />
+                    </div>
+                    <div class="cnt-area">
+                      <div class="date">24.11.13</div>
+                      <div class="name">
+                        피부노화 걱정 끝! 안티에이징케어 ~35%
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </li>
+
+              <li
+                class="swiper-slide swiper-slide-prev"
+                data-swiper-slide-index="8"
+                style="width: 413.333px; margin-right: 20px"
+              >
+                <div class="item">
+                  <a
+                    href="https://www.innisfree.com/kr/ko/HotdealSpcPrcMain.do?inmPromNo=174"
+                  >
+                    <span class="sticker04">쇼핑혜택</span>
+
+                    <div class="evtImg">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/event/3909_0.jpg?T202411161457"
+                        onerror="this.src='/kr/ko/resources/error/img/600x396.png'"
+                        alt=""
+                      />
+                    </div>
+                    <div class="cnt-area">
+                      <div class="date">24.11.6</div>
+                      <div class="name">
+                        매일쓰는 폼클렌징 2개이상 구매시 50% 할인
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </li>
+
+              <li
+                class="swiper-slide swiper-slide-duplicate swiper-slide-active"
+                data-swiper-slide-index="0"
+                style="width: 413.333px; margin-right: 20px"
+              >
+                <div class="item">
+                  <a
+                    href="/kr/ko/EventView.do?eventSeq=3856&amp;procStat=&amp;channelTyp="
+                  >
+                    <span class="sticker04">쇼핑혜택</span>
+
+                    <div class="evtImg">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/event/3856_0.jpg?T202411161457"
+                        onerror="this.src='/kr/ko/resources/error/img/600x396.png'"
+                        alt=""
+                      />
+                    </div>
+                    <div class="cnt-area">
+                      <div class="date">24.11.6</div>
+                      <div class="name">
+                        1년에 단 한번 블랙프라이데이 ~70%+9천원 혜택
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </li>
+              <li
+                class="swiper-slide swiper-slide-duplicate swiper-slide-next"
+                data-swiper-slide-index="1"
+                style="width: 413.333px; margin-right: 20px"
+              >
+                <div class="item">
+                  <a
+                    href="/kr/ko/EventView.do?eventSeq=3879&amp;procStat=&amp;channelTyp="
+                  >
+                    <span class="sticker04">쇼핑혜택</span>
+
+                    <div class="evtImg">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/event/3879_0.jpg?T202411161457"
+                        onerror="this.src='/kr/ko/resources/error/img/600x396.png'"
+                        alt=""
+                      />
+                    </div>
+                    <div class="cnt-area">
+                      <div class="date">24.11.6</div>
+                      <div class="name">
+                        우주급 증정 추가! 내가 쓰는 앰플&amp;크림 1개 용량 더
+                        증정
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </li>
+              <li
+                class="swiper-slide swiper-slide-duplicate"
+                data-swiper-slide-index="2"
+                style="width: 413.333px; margin-right: 20px"
+              >
+                <div class="item">
+                  <a
+                    href="/kr/ko/EventView.do?eventSeq=3880&amp;procStat=&amp;channelTyp="
+                  >
+                    <span class="sticker04">쇼핑혜택</span>
+
+                    <div class="evtImg">
+                      <img
+                        src="https://images.innisfree.co.kr/upload/event/3880_0.jpg?T202411161457"
+                        onerror="this.src='/kr/ko/resources/error/img/600x396.png'"
+                        alt=""
+                      />
+                    </div>
+                    <div class="cnt-area">
+                      <div class="date">24.11.13</div>
+                      <div class="name">
+                        ★선착순한정수량 미니니 구름담요 선착순 4,900원
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </li>
+            </ul>
+            <div
+              class="swiper-pagination progressbar swiper-pagination-progressbar"
+            >
+              <span
+                class="swiper-pagination-progressbar-fill"
+                style="
+                  transform: translate3d(0px, 0px, 0px) scaleX(0.111111)
+                    scaleY(1);
+                  transition-duration: 400ms;
+                "
+              ></span>
+            </div>
+            <div class="slideControl">
+              <button
+                type="button"
+                class="btnPrev"
+                tabindex="0"
+                role="button"
+                aria-label="Previous slide"
+              >
+                <span class="ir">이전목록</span>
+              </button>
+              <button
+                type="button"
+                class="btnNext"
+                tabindex="0"
+                role="button"
+                aria-label="Next slide"
+              >
+                <span class="ir">다음목록</span>
+              </button>
+            </div>
+            <span
+              class="swiper-notification"
+              aria-live="assertive"
+              aria-atomic="true"
+            ></span>
+          </div>
+
+                    <!-- 슬라이드 관련 script -->
+                    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+                    <script>
+                      var swiper = new Swiper(".swiper-container-initialized", {
+                        slidesPerView: 3,
+                        navigation: {
+                          loop: true,
+                          nextEl: ".btnNext",
+                          prevEl: ".btnPrev",
+                        },
+                        scrollbar: {
+                          el: ".swiper-pagination-progressbar",
+                        },
+                      });
+                    </script>
+                  </section>
+                </div>
+        </section>
+      </div>
+      <!-- 일단 복붙하긴 했는대 아직 분석안함 -->
+      <script>
+        // <![CDATA[  <-- For SVG support
+        if ("WebSocket" in window) {
+          (function () {
+            function refreshCSS() {
+              var sheets = [].slice.call(document.getElementsByTagName("link"));
+              var head = document.getElementsByTagName("head")[0];
+              for (var i = 0; i < sheets.length; ++i) {
+                var elem = sheets[i];
+                var parent = elem.parentElement || head;
+                parent.removeChild(elem);
+                var rel = elem.rel;
+                if (
+                  (elem.href && typeof rel != "string") ||
+                  rel.length == 0 ||
+                  rel.toLowerCase() == "stylesheet"
+                ) {
+                  var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, "");
+                  elem.href =
+                    url +
+                    (url.indexOf("?") >= 0 ? "&" : "?") +
+                    "_cacheOverride=" +
+                    new Date().valueOf();
+                }
+                parent.appendChild(elem);
+              }
+            }
+            var protocol =
+              window.location.protocol === "http:" ? "ws://" : "wss://";
+            var address =
+              protocol +
+              window.location.host +
+              window.location.pathname +
+              "/ws";
+            var socket = new WebSocket(address);
+            socket.onmessage = function (msg) {
+              if (msg.data == "reload") window.location.reload();
+              else if (msg.data == "refreshcss") refreshCSS();
+            };
+            if (
+              sessionStorage &&
+              !sessionStorage.getItem("IsThisFirstTime_Log_From_LiveServer")
+            ) {
+              console.log("Live reload enabled.");
+              sessionStorage.setItem(
+                "IsThisFirstTime_Log_From_LiveServer",
+                true
+              );
+            }
+          })();
+        } else {
+          console.error(
+            "Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading."
+          );
+        }
+        // ]]>
+      </script>
+      <!-- 두 번째 상품 단락 -->
+      <div class="termBetPandB2"></div>
+      <div class="contWrap">
+        <ul class="product_list01">
+          <li>
+            <div class="nail">
+              <a
+                ap-prd-name="포레스트 포맨 올인원 에센스 / 남자피부관리 남자스킨로션 민감성"
+                ap-prd-id="35097"
+                ap-prd-price="20300"
+                ap-prd-position="1"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=35097"
+              >
+                <div class="sticker">
+                  <span class="sticker05">21</span>
+                </div>
+                <div class="img">
+                  <img
+                    src="https://images.innisfree.co.kr/upload/product/35097_l_S_240.jpg?T202411171147"
+                    alt="포레스트 포맨 올인원 에센스 / 남자피부관리 남자스킨로션 민감성"
+                    onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                  />
+                  <div class="overFlip">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/35097_l1_S_240.jpg?T202411171147"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                  </div>
+                </div>
+              </a>
+              <div class="btnIconBox">
+                <button
+                  type="button"
+                  class="btnHeart"
+                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                >
+                  <span class="ir">찜</span></button
+                ><!-- 비활성 -->
+
+                <button
+                  type="button"
+                  class="btnCart"
+                  onclick="javascript:openPreview('35097', 'POPCART'); return false;"
+                >
+                  <span class="ir">장바구니</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="btnBuy"
+                  onclick="javascript:openPreview('35097', 'ORDER');return false;"
+                >
+                  <span class="ir">결재</span>
+                </button>
+              </div>
+            </div>
+            <a
+              ap-prd-name="포레스트 포맨 올인원 에센스 / 남자피부관리 남자스킨로션 민감성"
+              ap-prd-id="35097"
+              ap-prd-price="20300"
+              ap-prd-position="1"
+              ap-prd-list="BEST-전체"
+              href="/kr/ko/ProductView.do?prdSeq=35097"
+            >
+              <div class="info">
+                <div class="name">
+                  <strong> BEST </strong>
+                  포레스트 포맨 올인원 에센스 / 남자피부관리 남자스킨로션 민감성
+                </div>
+                <div class="priceBox">
+                  <strong class="price">20,300</strong>
+
+                  <span class="sale">30%</span>
+
+                  <span class="cost">29,000</span>
+                </div>
+
+                <div class="starGrade">
+                  <span class="grade">4.9 (4,496)</span>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <div class="nail">
+              <a
+                ap-prd-name="유브이 액티브 포어리스 선스크린 SPF50+ PA++++"
+                ap-prd-id="34618"
+                ap-prd-price="14000"
+                ap-prd-position="2"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=34618"
+              >
+                <div class="sticker">
+                  <span class="sticker05">22</span>
+                </div>
+                <div class="img">
+                  <img
+                    src="https://images.innisfree.co.kr/upload/product/34618_k_S_240.jpg?T202411171147"
+                    alt="유브이 액티브 포어리스 선스크린 SPF50+ PA++++"
+                    onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                  />
+                  <div class="overFlip">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/34618_k_S_240.jpg?T202411171147"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                  </div>
+                </div>
+              </a>
+              <div class="btnIconBox">
+                <button
+                  type="button"
+                  class="btnHeart"
+                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                >
+                  <span class="ir">찜</span></button
+                ><!-- 비활성 -->
+
+                <button
+                  type="button"
+                  class="btnCart"
+                  onclick="javascript:openPreview('34618', 'POPCART'); return false;"
+                >
+                  <span class="ir">장바구니</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="btnBuy"
+                  onclick="javascript:openPreview('34618', 'ORDER');return false;"
+                >
+                  <span class="ir">결재</span>
+                </button>
+              </div>
+            </div>
+            <a
+              ap-prd-name="유브이 액티브 포어리스 선스크린 SPF50+ PA++++"
+              ap-prd-id="34618"
+              ap-prd-price="14000"
+              ap-prd-position="2"
+              ap-prd-list="BEST-전체"
+              href="/kr/ko/ProductView.do?prdSeq=34618"
+            >
+              <div class="info">
+                <div class="name">
+                  <strong> BEST </strong>
+                  유브이 액티브 포어리스 선스크린 SPF50+ PA++++
+                </div>
+                <div class="priceBox">
+                  <strong class="price">14,000</strong>
+
+                  <span class="sale">~50%</span>
+
+                  <span class="cost">28,000</span>
+                </div>
+
+                <div class="starGrade">
+                  <span class="grade">4.8 (5,761)</span>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <div class="nail">
+              <a
+                ap-prd-name="[대용량] 그린티 씨드 히알루론산 세럼 / 수분에센스 저자극 비건인증"
+                ap-prd-id="37580"
+                ap-prd-price="30600"
+                ap-prd-position="3"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=37580"
+              >
+                <div class="sticker">
+                  <span class="sticker05">23</span>
+                </div>
+                <div class="img">
+                  <img
+                    src="https://images.innisfree.co.kr/upload/product/37580_l_S_240.png?T202411171147"
+                    alt="[대용량] 그린티 씨드 히알루론산 세럼 / 수분에센스 저자극 비건인증"
+                    onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                  />
+                  <div class="overFlip">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/37580_l1_S_240.jpg?T202411171147"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                  </div>
+                </div>
+              </a>
+              <div class="btnIconBox">
+                <button
+                  type="button"
+                  class="btnHeart"
+                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                >
+                  <span class="ir">찜</span></button
+                ><!-- 비활성 -->
+
+                <button
+                  type="button"
+                  class="btnCart"
+                  onclick="javascript:openPreview('37580', 'POPCART'); return false;"
+                >
+                  <span class="ir">장바구니</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="btnBuy"
+                  onclick="javascript:openPreview('37580', 'ORDER');return false;"
+                >
+                  <span class="ir">결재</span>
+                </button>
+              </div>
+            </div>
+            <a
+              ap-prd-name="[대용량] 그린티 씨드 히알루론산 세럼 / 수분에센스 저자극 비건인증"
+              ap-prd-id="37580"
+              ap-prd-price="30600"
+              ap-prd-position="3"
+              ap-prd-list="BEST-전체"
+              href="/kr/ko/ProductView.do?prdSeq=37580"
+            >
+              <div class="info">
+                <div class="name">
+                  <strong> BEST </strong>
+                  [대용량] 그린티 씨드 히알루론산 세럼 / 수분에센스 저자극
+                  비건인증
+                </div>
+                <div class="priceBox">
+                  <strong class="price">30,600</strong>
+
+                  <span class="sale">32%</span>
+
+                  <span class="cost">45,000</span>
+                </div>
+
+                <div class="stickerBox">
+                  <span class="sticker01">증정</span>
+                </div>
+
+                <div class="starGrade">
+                  <span class="grade">4.9 (24,903)</span>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <div class="nail">
+              <a
+                ap-prd-name="퍼펙트 9 인텐시브 스킨케어 세트"
+                ap-prd-id="34721"
+                ap-prd-price="48100"
+                ap-prd-position="4"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=34721"
+              >
+                <div class="sticker">
+                  <span class="sticker05">24</span>
+                </div>
+                <div class="img">
+                  <img
+                    src="https://images.innisfree.co.kr/upload/product/34721_l_S_240.jpg?T202411171147"
+                    alt="퍼펙트 9 인텐시브 스킨케어 세트"
+                    onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                  />
+                  <div class="overFlip">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/34721_l1_S_240.jpg?T202411171147"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                  </div>
+                </div>
+              </a>
+              <div class="btnIconBox">
+                <button
+                  type="button"
+                  class="btnHeart"
+                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                >
+                  <span class="ir">찜</span></button
+                ><!-- 비활성 -->
+
+                <button
+                  type="button"
+                  class="btnCart"
+                  onclick="javascript:openPreview('34721', 'POPCART'); return false;"
+                >
+                  <span class="ir">장바구니</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="btnBuy"
+                  onclick="javascript:openPreview('34721', 'ORDER');return false;"
+                >
+                  <span class="ir">결재</span>
+                </button>
+              </div>
+            </div>
+            <a
+              ap-prd-name="퍼펙트 9 인텐시브 스킨케어 세트"
+              ap-prd-id="34721"
+              ap-prd-price="48100"
+              ap-prd-position="4"
+              ap-prd-list="BEST-전체"
+              href="/kr/ko/ProductView.do?prdSeq=34721"
+            >
+              <div class="info">
+                <div class="name">
+                  <strong> BEST </strong>
+                  퍼펙트 9 인텐시브 스킨케어 세트
+                </div>
+                <div class="priceBox">
+                  <strong class="price">48,100</strong>
+
+                  <span class="sale">35%</span>
+
+                  <span class="cost">74,000</span>
+                </div>
+
+                <div class="starGrade">
+                  <span class="grade">4.8 (3,024)</span>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <div class="nail">
+              <a
+                ap-prd-name="블랙티 유스 앰플[대용량] 50mL + 블랙티 크림 50mL"
+                ap-prd-id="34625"
+                ap-prd-price="61750"
+                ap-prd-position="5"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=34625"
+              >
+                <div class="sticker">
+                  <span class="sticker05">25</span>
+                </div>
+                <div class="img">
+                  <img
+                    src="https://images.innisfree.co.kr/upload/product/34625_l_S_240.png?T202411171147"
+                    alt="블랙티 유스 앰플[대용량] 50mL + 블랙티 크림 50mL"
+                    onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                  />
+                  <div class="overFlip">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/34625_l_S_240.png?T202411171147"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                  </div>
+                </div>
+              </a>
+              <div class="btnIconBox">
+                <button
+                  type="button"
+                  class="btnHeart"
+                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                >
+                  <span class="ir">찜</span></button
+                ><!-- 비활성 -->
+
+                <button
+                  type="button"
+                  class="btnCart"
+                  onclick="javascript:openPreview('34625', 'POPCART'); return false;"
+                >
+                  <span class="ir">장바구니</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="btnBuy"
+                  onclick="javascript:openPreview('34625', 'ORDER');return false;"
+                >
+                  <span class="ir">결재</span>
+                </button>
+              </div>
+            </div>
+            <a
+              ap-prd-name="블랙티 유스 앰플[대용량] 50mL + 블랙티 크림 50mL"
+              ap-prd-id="34625"
+              ap-prd-price="61750"
+              ap-prd-position="5"
+              ap-prd-list="BEST-전체"
+              href="/kr/ko/ProductView.do?prdSeq=34625"
+            >
+              <div class="info">
+                <div class="name">
+                  <strong> BEST </strong>
+                  블랙티 유스 앰플[대용량] 50mL + 블랙티 크림 50mL
+                </div>
+                <div class="priceBox">
+                  <strong class="price">61,750</strong>
+
+                  <span class="sale">35%</span>
+
+                  <span class="cost">95,000</span>
+                </div>
+
+                <div class="stickerBox">
+                  <span class="sticker01">증정</span>
+                </div>
+
+                <div class="starGrade">
+                  <span class="grade">4.9 (55,096)</span>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <div class="nail">
+              <a
+                ap-prd-name="[더블기획] 비타C 잡티토닝패드 / 브라이트닝 화이트닝 토너패드 피부톤"
+                ap-prd-id="37143"
+                ap-prd-price="36400"
+                ap-prd-position="6"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=37143"
+              >
+                <div class="sticker">
+                  <span class="sticker05">26</span>
+                </div>
+                <div class="img">
+                  <img
+                    src="https://images.innisfree.co.kr/upload/product/37143_l_S_240.jpg?T202411171147"
+                    alt="[더블기획] 비타C 잡티토닝패드 / 브라이트닝 화이트닝 토너패드 피부톤"
+                    onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                  />
+                  <div class="overFlip">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/37143_l1_S_240.jpg?T202411171147"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                  </div>
+                </div>
+              </a>
+              <div class="btnIconBox">
+                <button
+                  type="button"
+                  class="btnHeart"
+                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                >
+                  <span class="ir">찜</span></button
+                ><!-- 비활성 -->
+
+                <button
+                  type="button"
+                  class="btnCart"
+                  onclick="javascript:openPreview('37143', 'POPCART'); return false;"
+                >
+                  <span class="ir">장바구니</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="btnBuy"
+                  onclick="javascript:openPreview('37143', 'ORDER');return false;"
+                >
+                  <span class="ir">결재</span>
+                </button>
+              </div>
+            </div>
+            <a
+              ap-prd-name="[더블기획] 비타C 잡티토닝패드 / 브라이트닝 화이트닝 토너패드 피부톤"
+              ap-prd-id="37143"
+              ap-prd-price="36400"
+              ap-prd-position="6"
+              ap-prd-list="BEST-전체"
+              href="/kr/ko/ProductView.do?prdSeq=37143"
+            >
+              <div class="info">
+                <div class="name">
+                  <strong> BEST </strong>
+                  [더블기획] 비타C 잡티토닝패드 / 브라이트닝 화이트닝 토너패드
+                  피부톤
+                </div>
+                <div class="priceBox">
+                  <strong class="price">36,400</strong>
+
+                  <span class="sale">35%</span>
+
+                  <span class="cost">56,000</span>
+                </div>
+
+                <div class="starGrade">
+                  <span class="grade">4.8 (3,936)</span>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <div class="nail">
+              <a
+                ap-prd-name="마이 퍼퓸드 핸드크림"
+                ap-prd-id="35236"
+                ap-prd-price="3000"
+                ap-prd-position="7"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=35236"
+              >
+                <div class="sticker">
+                  <span class="sticker05">27</span>
+                </div>
+                <div class="img">
+                  <img
+                    src="https://images.innisfree.co.kr/upload/product/35236_p_S_240.jpg?T202411171147"
+                    alt="마이 퍼퓸드 핸드크림"
+                    onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                  />
+                  <div class="overFlip">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/35236_p_S_240.jpg?T202411171147"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                  </div>
+                </div>
+              </a>
+              <div class="btnIconBox">
+                <button
+                  type="button"
+                  class="btnHeart"
+                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                >
+                  <span class="ir">찜</span></button
+                ><!-- 비활성 -->
+
+                <button
+                  type="button"
+                  class="btnCart"
+                  onclick="javascript:openPreview('35236', 'POPCART'); return false;"
+                >
+                  <span class="ir">장바구니</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="btnBuy"
+                  onclick="javascript:openPreview('35236', 'ORDER');return false;"
+                >
+                  <span class="ir">결재</span>
+                </button>
+              </div>
+            </div>
+            <a
+              ap-prd-name="마이 퍼퓸드 핸드크림"
+              ap-prd-id="35236"
+              ap-prd-price="3000"
+              ap-prd-position="7"
+              ap-prd-list="BEST-전체"
+              href="/kr/ko/ProductView.do?prdSeq=35236"
+            >
+              <div class="info">
+                <div class="name">
+                  <strong> BEST </strong>
+                  마이 퍼퓸드 핸드크림
+                </div>
+                <div class="priceBox">
+                  <strong class="price">3,000</strong>
+
+                  <span class="sale">~50%</span>
+
+                  <span class="cost">6,000</span>
+                </div>
+
+                <div class="starGrade">
+                  <span class="grade">4.8 (6,474)</span>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <div class="nail">
+              <a
+                ap-prd-name="올리브 비타민 E 리얼 폼 클렌징 "
+                ap-prd-id="36923"
+                ap-prd-price="7000"
+                ap-prd-position="8"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=36923"
+              >
+                <div class="sticker">
+                  <span class="sticker05">28</span>
+                </div>
+                <div class="img">
+                  <img
+                    src="https://images.innisfree.co.kr/upload/product/36923_p_S_240.jpg?T202411171147"
+                    alt="올리브 비타민 E 리얼 폼 클렌징 "
+                    onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                  />
+                  <div class="overFlip">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/36923_p_S_240.jpg?T202411171147"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                  </div>
+                </div>
+              </a>
+              <div class="btnIconBox">
+                <button
+                  type="button"
+                  class="btnHeart"
+                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                >
+                  <span class="ir">찜</span></button
+                ><!-- 비활성 -->
+
+                <button
+                  type="button"
+                  class="btnCart"
+                  onclick="javascript:openPreview('36923', 'POPCART'); return false;"
+                >
+                  <span class="ir">장바구니</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="btnBuy"
+                  onclick="javascript:openPreview('36923', 'ORDER');return false;"
+                >
+                  <span class="ir">결재</span>
+                </button>
+              </div>
+            </div>
+            <a
+              ap-prd-name="올리브 비타민 E 리얼 폼 클렌징 "
+              ap-prd-id="36923"
+              ap-prd-price="7000"
+              ap-prd-position="8"
+              ap-prd-list="BEST-전체"
+              href="/kr/ko/ProductView.do?prdSeq=36923"
+            >
+              <div class="info">
+                <div class="name">
+                  <strong> BEST </strong>
+                  올리브 비타민 E 리얼 폼 클렌징
+                </div>
+                <div class="priceBox">
+                  <strong class="price">7,000</strong>
+
+                  <span class="sale">~50%</span>
+
+                  <span class="cost">14,000</span>
+                </div>
+
+                <div class="starGrade">
+                  <span class="grade">4.8 (1,447)</span>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <div class="nail">
+              <a
+                ap-prd-name=" [김나영 pick] 레티놀 그린티 PDRN 스킨부스터 앰플"
+                ap-prd-id="37500"
+                ap-prd-price="28000"
+                ap-prd-position="9"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=37500"
+              >
+                <div class="sticker">
+                  <span class="sticker05">29</span>
+                </div>
+                <div class="img">
+                  <img
+                    src="https://images.innisfree.co.kr/upload/product/37500_p_S_240.jpg?T202411171147"
+                    alt=" [김나영 pick] 레티놀 그린티 PDRN 스킨부스터 앰플"
+                    onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                  />
+                  <div class="overFlip">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/37500_p1_S_240.jpg?T202411171147"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                  </div>
+                </div>
+              </a>
+              <div class="btnIconBox">
+                <button
+                  type="button"
+                  class="btnHeart"
+                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                >
+                  <span class="ir">찜</span></button
+                ><!-- 비활성 -->
+
+                <button
+                  type="button"
+                  class="btnCart"
+                  onclick="javascript:openPreview('37500', 'POPCART'); return false;"
+                >
+                  <span class="ir">장바구니</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="btnBuy"
+                  onclick="javascript:openPreview('37500', 'ORDER');return false;"
+                >
+                  <span class="ir">결재</span>
+                </button>
+              </div>
+            </div>
+            <a
+              ap-prd-name=" [김나영 pick] 레티놀 그린티 PDRN 스킨부스터 앰플"
+              ap-prd-id="37500"
+              ap-prd-price="28000"
+              ap-prd-position="9"
+              ap-prd-list="BEST-전체"
+              href="/kr/ko/ProductView.do?prdSeq=37500"
+            >
+              <div class="info">
+                <div class="name">
+                  <strong> BEST </strong>
+                  [김나영 pick] 레티놀 그린티 PDRN 스킨부스터 앰플
+                </div>
+                <div class="priceBox">
+                  <strong class="price">28,000</strong>
+
+                  <span class="sale">30%</span>
+
+                  <span class="cost">40,000</span>
+                </div>
+
+                <div class="stickerBox">
+                  <span class="sticker01">증정</span>
+                </div>
+
+                <div class="starGrade">
+                  <span class="grade">4.9 (8,316)</span>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <div class="nail">
+              <a
+                ap-prd-name="[민규 증명사진 4컷 증정] 그린티 크림 더블기획 [튜브]"
+                ap-prd-id="37698"
+                ap-prd-price="27000"
+                ap-prd-position="10"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=37698"
+              >
+                <div class="sticker">
+                  <span class="sticker05">30</span>
+                </div>
+                <div class="img">
+                  <img
+                    src="https://images.innisfree.co.kr/upload/product/37698_k_S_240.png?T202411171147"
+                    alt="[민규 증명사진 4컷 증정] 그린티 크림 더블기획 [튜브]"
+                    onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                  />
+                  <div class="overFlip">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/37698_k_S_240.png?T202411171147"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                  </div>
+                </div>
+              </a>
+              <div class="btnIconBox">
+                <button
+                  type="button"
+                  class="btnHeart"
+                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                >
+                  <span class="ir">찜</span></button
+                ><!-- 비활성 -->
+
+                <button
+                  type="button"
+                  class="btnCart"
+                  onclick="javascript:openPreview('37698', 'POPCART'); return false;"
+                >
+                  <span class="ir">장바구니</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="btnBuy"
+                  onclick="javascript:openPreview('37698', 'ORDER');return false;"
+                >
+                  <span class="ir">결재</span>
+                </button>
+              </div>
+            </div>
+            <a
+              ap-prd-name="[민규 증명사진 4컷 증정] 그린티 크림 더블기획 [튜브]"
+              ap-prd-id="37698"
+              ap-prd-price="27000"
+              ap-prd-position="10"
+              ap-prd-list="BEST-전체"
+              href="/kr/ko/ProductView.do?prdSeq=37698"
+            >
+              <div class="info">
+                <div class="name">
+                  <strong> BEST </strong>
+                  [민규 증명사진 4컷 증정] 그린티 크림 더블기획 [튜브]
+                </div>
+                <div class="priceBox">
+                  <strong class="price">27,000</strong>
+
+                  <span class="sale">50%</span>
+
+                  <span class="cost">54,000</span>
+                </div>
+
+                <div class="stickerBox">
+                  <span class="sticker01">증정</span>
+                </div>
+
+                <div class="starGrade">
+                  <span class="grade">4.9 (13,625)</span>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <div class="nail">
+              <a
+                ap-prd-name="포레스트 포맨 쉐이빙 폼 클렌징"
+                ap-prd-id="35597"
+                ap-prd-price="6500"
+                ap-prd-position="11"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=35597"
+              >
+                <div class="sticker">
+                  <span class="sticker05">31</span>
+                </div>
+                <div class="img">
+                  <img
+                    src="https://images.innisfree.co.kr/upload/product/35597_p_S_240.jpg?T202411171147"
+                    alt="포레스트 포맨 쉐이빙 폼 클렌징"
+                    onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                  />
+                  <div class="overFlip">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/35597_p_S_240.jpg?T202411171147"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                  </div>
+                </div>
+              </a>
+              <div class="btnIconBox">
+                <button
+                  type="button"
+                  class="btnHeart"
+                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                >
+                  <span class="ir">찜</span></button
+                ><!-- 비활성 -->
+
+                <button
+                  type="button"
+                  class="btnCart"
+                  onclick="javascript:openPreview('35597', 'POPCART'); return false;"
+                >
+                  <span class="ir">장바구니</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="btnBuy"
+                  onclick="javascript:openPreview('35597', 'ORDER');return false;"
+                >
+                  <span class="ir">결재</span>
+                </button>
+              </div>
+            </div>
+            <a
+              ap-prd-name="포레스트 포맨 쉐이빙 폼 클렌징"
+              ap-prd-id="35597"
+              ap-prd-price="6500"
+              ap-prd-position="11"
+              ap-prd-list="BEST-전체"
+              href="/kr/ko/ProductView.do?prdSeq=35597"
+            >
+              <div class="info">
+                <div class="name">
+                  <strong> </strong>
+                  포레스트 포맨 쉐이빙 폼 클렌징
+                </div>
+                <div class="priceBox">
+                  <strong class="price">6,500</strong>
+
+                  <span class="sale">~50%</span>
+
+                  <span class="cost">13,000</span>
+                </div>
+
+                <div class="starGrade">
+                  <span class="grade">4.8 (2,933)</span>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <div class="nail">
+              <a
+                ap-prd-name="[대용량] 블랙티 유스 인핸싱 앰플 / 미백 탄력케어 피부결 보습"
+                ap-prd-id="34497"
+                ap-prd-price="38350"
+                ap-prd-position="12"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=34497"
+              >
+                <div class="sticker">
+                  <span class="sticker05">32</span>
+                </div>
+                <div class="img">
+                  <img
+                    src="https://images.innisfree.co.kr/upload/product/34497_p_S_240.png?T202411171147"
+                    alt="[대용량] 블랙티 유스 인핸싱 앰플 / 미백 탄력케어 피부결 보습"
+                    onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                  />
+                  <div class="overFlip">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/34497_p_S_240.png?T202411171147"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                  </div>
+                </div>
+              </a>
+              <div class="btnIconBox">
+                <button
+                  type="button"
+                  class="btnHeart"
+                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                >
+                  <span class="ir">찜</span></button
+                ><!-- 비활성 -->
+
+                <button
+                  type="button"
+                  class="btnCart"
+                  onclick="javascript:openPreview('34497', 'POPCART'); return false;"
+                >
+                  <span class="ir">장바구니</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="btnBuy"
+                  onclick="javascript:openPreview('34497', 'ORDER');return false;"
+                >
+                  <span class="ir">결재</span>
+                </button>
+              </div>
+            </div>
+            <a
+              ap-prd-name="[대용량] 블랙티 유스 인핸싱 앰플 / 미백 탄력케어 피부결 보습"
+              ap-prd-id="34497"
+              ap-prd-price="38350"
+              ap-prd-position="12"
+              ap-prd-list="BEST-전체"
+              href="/kr/ko/ProductView.do?prdSeq=34497"
+            >
+              <div class="info">
+                <div class="name">
+                  <strong> </strong>
+                  [대용량] 블랙티 유스 인핸싱 앰플 / 미백 탄력케어 피부결 보습
+                </div>
+                <div class="priceBox">
+                  <strong class="price">38,350</strong>
+
+                  <span class="sale">35%</span>
+
+                  <span class="cost">59,000</span>
+                </div>
+
+                <div class="stickerBox">
+                  <span class="sticker01">증정</span>
+                </div>
+
+                <div class="starGrade">
+                  <span class="grade">4.9 (55,096)</span>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <div class="nail">
+              <a
+                ap-prd-name="블랙티 유스 인핸싱 스킨케어 세트"
+                ap-prd-id="34617"
+                ap-prd-price="37800"
+                ap-prd-position="13"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=34617"
+              >
+                <div class="sticker">
+                  <span class="sticker05">33</span>
+                </div>
+                <div class="img">
+                  <img
+                    src="https://images.innisfree.co.kr/upload/product/34617_l_S_240.jpg?T202411171147"
+                    alt="블랙티 유스 인핸싱 스킨케어 세트"
+                    onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                  />
+                  <div class="overFlip">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/34617_l5_S_240.jpg?T202411171147"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                  </div>
+                </div>
+              </a>
+              <div class="btnIconBox">
+                <button
+                  type="button"
+                  class="btnHeart"
+                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                >
+                  <span class="ir">찜</span></button
+                ><!-- 비활성 -->
+
+                <button
+                  type="button"
+                  class="btnCart"
+                  onclick="javascript:openPreview('34617', 'POPCART'); return false;"
+                >
+                  <span class="ir">장바구니</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="btnBuy"
+                  onclick="javascript:openPreview('34617', 'ORDER');return false;"
+                >
+                  <span class="ir">결재</span>
+                </button>
+              </div>
+            </div>
+            <a
+              ap-prd-name="블랙티 유스 인핸싱 스킨케어 세트"
+              ap-prd-id="34617"
+              ap-prd-price="37800"
+              ap-prd-position="13"
+              ap-prd-list="BEST-전체"
+              href="/kr/ko/ProductView.do?prdSeq=34617"
+            >
+              <div class="info">
+                <div class="name">
+                  <strong> BEST </strong>
+                  블랙티 유스 인핸싱 스킨케어 세트
+                </div>
+                <div class="priceBox">
+                  <strong class="price">37,800</strong>
+
+                  <span class="sale">30%</span>
+
+                  <span class="cost">54,000</span>
+                </div>
+
+                <div class="starGrade">
+                  <span class="grade">4.8 (5,184)</span>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <div class="nail">
+              <a
+                ap-prd-name="애플씨드 클렌징 오일"
+                ap-prd-id="35216"
+                ap-prd-price="14700"
+                ap-prd-position="14"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=35216"
+              >
+                <div class="sticker">
+                  <span class="sticker05">34</span>
+                </div>
+                <div class="img">
+                  <img
+                    src="https://images.innisfree.co.kr/upload/product/35216_l_S_240.jpg?T202411171147"
+                    alt="애플씨드 클렌징 오일"
+                    onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                  />
+                  <div class="overFlip">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/35216_l1_S_240.jpg?T202411171147"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                  </div>
+                </div>
+              </a>
+              <div class="btnIconBox">
+                <button
+                  type="button"
+                  class="btnHeart"
+                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                >
+                  <span class="ir">찜</span></button
+                ><!-- 비활성 -->
+
+                <button
+                  type="button"
+                  class="btnCart"
+                  onclick="javascript:openPreview('35216', 'POPCART'); return false;"
+                >
+                  <span class="ir">장바구니</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="btnBuy"
+                  onclick="javascript:openPreview('35216', 'ORDER');return false;"
+                >
+                  <span class="ir">결재</span>
+                </button>
+              </div>
+            </div>
+            <a
+              ap-prd-name="애플씨드 클렌징 오일"
+              ap-prd-id="35216"
+              ap-prd-price="14700"
+              ap-prd-position="14"
+              ap-prd-list="BEST-전체"
+              href="/kr/ko/ProductView.do?prdSeq=35216"
+            >
+              <div class="info">
+                <div class="name">
+                  <strong> </strong>
+                  애플씨드 클렌징 오일
+                </div>
+                <div class="priceBox">
+                  <strong class="price">14,700</strong>
+
+                  <span class="sale">30%</span>
+
+                  <span class="cost">21,000</span>
+                </div>
+
+                <div class="starGrade">
+                  <span class="grade">4.8 (14,191)</span>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <div class="nail">
+              <a
+                ap-prd-name="퍼펙트 9 인텐시브 아이크림"
+                ap-prd-id="34720"
+                ap-prd-price="29250"
+                ap-prd-position="15"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=34720"
+              >
+                <div class="sticker">
+                  <span class="sticker05">35</span>
+                </div>
+                <div class="img">
+                  <img
+                    src="https://images.innisfree.co.kr/upload/product/34720_l_S_240.jpg?T202411171147"
+                    alt="퍼펙트 9 인텐시브 아이크림"
+                    onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                  />
+                  <div class="overFlip">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/34720_l1_S_240.jpg?T202411171147"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                  </div>
+                </div>
+              </a>
+              <div class="btnIconBox">
+                <button
+                  type="button"
+                  class="btnHeart"
+                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                >
+                  <span class="ir">찜</span></button
+                ><!-- 비활성 -->
+
+                <button
+                  type="button"
+                  class="btnCart"
+                  onclick="javascript:openPreview('34720', 'POPCART'); return false;"
+                >
+                  <span class="ir">장바구니</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="btnBuy"
+                  onclick="javascript:openPreview('34720', 'ORDER');return false;"
+                >
+                  <span class="ir">결재</span>
+                </button>
+              </div>
+            </div>
+            <a
+              ap-prd-name="퍼펙트 9 인텐시브 아이크림"
+              ap-prd-id="34720"
+              ap-prd-price="29250"
+              ap-prd-position="15"
+              ap-prd-list="BEST-전체"
+              href="/kr/ko/ProductView.do?prdSeq=34720"
+            >
+              <div class="info">
+                <div class="name">
+                  <strong> </strong>
+                  퍼펙트 9 인텐시브 아이크림
+                </div>
+                <div class="priceBox">
+                  <strong class="price">29,250</strong>
+
+                  <span class="sale">35%</span>
+
+                  <span class="cost">45,000</span>
+                </div>
+
+                <div class="starGrade">
+                  <span class="grade">4.8 (3,245)</span>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <div class="nail">
+              <a
+                ap-prd-name="한란 핸드 크림"
+                ap-prd-id="15817"
+                ap-prd-price="3500"
+                ap-prd-position="16"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=15817"
+              >
+                <div class="sticker">
+                  <span class="sticker05">36</span>
+                </div>
+                <div class="img">
+                  <img
+                    src="https://images.innisfree.co.kr/upload/product/15817_p_S_240.jpg?T202411171147"
+                    alt="한란 핸드 크림"
+                    onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                  />
+                  <div class="overFlip">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/15817_p_S_240.jpg?T202411171147"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                  </div>
+                </div>
+              </a>
+              <div class="btnIconBox">
+                <button
+                  type="button"
+                  class="btnHeart"
+                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                >
+                  <span class="ir">찜</span></button
+                ><!-- 비활성 -->
+
+                <button
+                  type="button"
+                  class="btnCart"
+                  onclick="javascript:openPreview('15817', 'POPCART'); return false;"
+                >
+                  <span class="ir">장바구니</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="btnBuy"
+                  onclick="javascript:openPreview('15817', 'ORDER');return false;"
+                >
+                  <span class="ir">결재</span>
+                </button>
+              </div>
+            </div>
+            <a
+              ap-prd-name="한란 핸드 크림"
+              ap-prd-id="15817"
+              ap-prd-price="3500"
+              ap-prd-position="16"
+              ap-prd-list="BEST-전체"
+              href="/kr/ko/ProductView.do?prdSeq=15817"
+            >
+              <div class="info">
+                <div class="name">
+                  <strong> </strong>
+                  한란 핸드 크림
+                </div>
+                <div class="priceBox">
+                  <strong class="price">3,500</strong>
+
+                  <span class="sale">~50%</span>
+
+                  <span class="cost">7,000</span>
+                </div>
+
+                <div class="starGrade">
+                  <span class="grade">4.8 (4,820)</span>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <div class="nail">
+              <a
+                ap-prd-name="애플씨드 버블 클렌저"
+                ap-prd-id="36416"
+                ap-prd-price="9000"
+                ap-prd-position="17"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=36416"
+              >
+                <div class="sticker">
+                  <span class="sticker05">37</span>
+                </div>
+                <div class="img">
+                  <img
+                    src="https://images.innisfree.co.kr/upload/product/36416_p_S_240.jpg?T202411171147"
+                    alt="애플씨드 버블 클렌저"
+                    onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                  />
+                  <div class="overFlip">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/36416_p_S_240.jpg?T202411171147"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                  </div>
+                </div>
+              </a>
+              <div class="btnIconBox">
+                <button
+                  type="button"
+                  class="btnHeart"
+                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                >
+                  <span class="ir">찜</span></button
+                ><!-- 비활성 -->
+
+                <button
+                  type="button"
+                  class="btnCart"
+                  onclick="javascript:openPreview('36416', 'POPCART'); return false;"
+                >
+                  <span class="ir">장바구니</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="btnBuy"
+                  onclick="javascript:openPreview('36416', 'ORDER');return false;"
+                >
+                  <span class="ir">결재</span>
+                </button>
+              </div>
+            </div>
+            <a
+              ap-prd-name="애플씨드 버블 클렌저"
+              ap-prd-id="36416"
+              ap-prd-price="9000"
+              ap-prd-position="17"
+              ap-prd-list="BEST-전체"
+              href="/kr/ko/ProductView.do?prdSeq=36416"
+            >
+              <div class="info">
+                <div class="name">
+                  <strong> </strong>
+                  애플씨드 버블 클렌저
+                </div>
+                <div class="priceBox">
+                  <strong class="price">9,000</strong>
+
+                  <span class="sale">~50%</span>
+
+                  <span class="cost">18,000</span>
+                </div>
+
+                <div class="starGrade">
+                  <span class="grade">4.8 (920)</span>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <div class="nail">
+              <a
+                ap-prd-name="퍼펙트 9 인텐시브 크림"
+                ap-prd-id="34719"
+                ap-prd-price="33150"
+                ap-prd-position="18"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=34719"
+              >
+                <div class="sticker">
+                  <span class="sticker05">38</span>
+                </div>
+                <div class="img">
+                  <img
+                    src="https://images.innisfree.co.kr/upload/product/34719_l_S_240.jpg?T202411171147"
+                    alt="퍼펙트 9 인텐시브 크림"
+                    onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                  />
+                  <div class="overFlip">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/34719_l1_S_240.jpg?T202411171147"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                  </div>
+                </div>
+              </a>
+              <div class="btnIconBox">
+                <button
+                  type="button"
+                  class="btnHeart"
+                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                >
+                  <span class="ir">찜</span></button
+                ><!-- 비활성 -->
+
+                <button
+                  type="button"
+                  class="btnCart"
+                  onclick="javascript:openPreview('34719', 'POPCART'); return false;"
+                >
+                  <span class="ir">장바구니</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="btnBuy"
+                  onclick="javascript:openPreview('34719', 'ORDER');return false;"
+                >
+                  <span class="ir">결재</span>
+                </button>
+              </div>
+            </div>
+            <a
+              ap-prd-name="퍼펙트 9 인텐시브 크림"
+              ap-prd-id="34719"
+              ap-prd-price="33150"
+              ap-prd-position="18"
+              ap-prd-list="BEST-전체"
+              href="/kr/ko/ProductView.do?prdSeq=34719"
+            >
+              <div class="info">
+                <div class="name">
+                  <strong> </strong>
+                  퍼펙트 9 인텐시브 크림
+                </div>
+                <div class="priceBox">
+                  <strong class="price">33,150</strong>
+
+                  <span class="sale">35%</span>
+
+                  <span class="cost">51,000</span>
+                </div>
+
+                <div class="starGrade">
+                  <span class="grade">4.8 (3,444)</span>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <div class="nail">
+              <a
+                ap-prd-name="블랙티 유스 앰플[대용량] 50mL + 블랙티 에센스[대용량] 145mL"
+                ap-prd-id="37023"
+                ap-prd-price="67600"
+                ap-prd-position="19"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=37023"
+              >
+                <div class="sticker">
+                  <span class="sticker05">39</span>
+                </div>
+                <div class="img">
+                  <img
+                    src="https://images.innisfree.co.kr/upload/product/37023_l_S_240.png?T202411171147"
+                    alt="블랙티 유스 앰플[대용량] 50mL + 블랙티 에센스[대용량] 145mL"
+                    onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                  />
+                  <div class="overFlip">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/37023_l_S_240.png?T202411171147"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                  </div>
+                </div>
+              </a>
+              <div class="btnIconBox">
+                <button
+                  type="button"
+                  class="btnHeart"
+                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                >
+                  <span class="ir">찜</span></button
+                ><!-- 비활성 -->
+
+                <button
+                  type="button"
+                  class="btnCart"
+                  onclick="javascript:openPreview('37023', 'POPCART'); return false;"
+                >
+                  <span class="ir">장바구니</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="btnBuy"
+                  onclick="javascript:openPreview('37023', 'ORDER');return false;"
+                >
+                  <span class="ir">결재</span>
+                </button>
+              </div>
+            </div>
+            <a
+              ap-prd-name="블랙티 유스 앰플[대용량] 50mL + 블랙티 에센스[대용량] 145mL"
+              ap-prd-id="37023"
+              ap-prd-price="67600"
+              ap-prd-position="19"
+              ap-prd-list="BEST-전체"
+              href="/kr/ko/ProductView.do?prdSeq=37023"
+            >
+              <div class="info">
+                <div class="name">
+                  <strong> </strong>
+                  블랙티 유스 앰플[대용량] 50mL + 블랙티 에센스[대용량] 145mL
+                </div>
+                <div class="priceBox">
+                  <strong class="price">67,600</strong>
+
+                  <span class="sale">35%</span>
+
+                  <span class="cost">104,000</span>
+                </div>
+
+                <div class="stickerBox">
+                  <span class="sticker01">증정</span>
+                </div>
+
+                <div class="starGrade">
+                  <span class="grade">4.9 (26)</span>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li>
+            <div class="nail">
+              <a
+                ap-prd-name="그린티 히알루론산 수분크림 / 화잘먹 저자극 진정 끈적이지않는 수분크림"
+                ap-prd-id="34510"
+                ap-prd-price="17550"
+                ap-prd-position="20"
+                ap-prd-list="BEST-전체"
+                href="/kr/ko/ProductView.do?prdSeq=34510"
+              >
+                <div class="sticker">
+                  <span class="sticker05">40</span>
+                </div>
+                <div class="img">
+                  <img
+                    src="https://images.innisfree.co.kr/upload/product/34510_p_S_240.png?T202411171147"
+                    alt="그린티 히알루론산 수분크림 / 화잘먹 저자극 진정 끈적이지않는 수분크림"
+                    onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                  />
+                  <div class="overFlip">
+                    <img
+                      src="https://images.innisfree.co.kr/upload/product/34510_p1_S_240.jpg?T202411171147"
+                      onerror="this.src='/kr/ko/resources/error/img/240x320.png'"
+                    />
+                  </div>
+                </div>
+              </a>
+              <div class="btnIconBox">
+                <button
+                  type="button"
+                  class="btnHeart"
+                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                >
+                  <span class="ir">찜</span></button
+                ><!-- 비활성 -->
+
+                <button
+                  type="button"
+                  class="btnCart"
+                  onclick="javascript:openPreview('34510', 'POPCART'); return false;"
+                >
+                  <span class="ir">장바구니</span>
+                </button>
+
+                <button
+                  type="button"
+                  class="btnBuy"
+                  onclick="javascript:openPreview('34510', 'ORDER');return false;"
+                >
+                  <span class="ir">결재</span>
+                </button>
+              </div>
+            </div>
+            <a
+              ap-prd-name="그린티 히알루론산 수분크림 / 화잘먹 저자극 진정 끈적이지않는 수분크림"
+              ap-prd-id="34510"
+              ap-prd-price="17550"
+              ap-prd-position="20"
+              ap-prd-list="BEST-전체"
+              href="/kr/ko/ProductView.do?prdSeq=34510"
+            >
+              <div class="info">
+                <div class="name">
+                  <strong> </strong>
+                  그린티 히알루론산 수분크림 / 화잘먹 저자극 진정 끈적이지않는
+                  수분크림
+                </div>
+                <div class="priceBox">
+                  <strong class="price">17,550</strong>
+
+                  <span class="sale">35%</span>
+
+                  <span class="cost">27,000</span>
+                </div>
+
+                <div class="stickerBox">
+                  <span class="sticker01">증정</span>
+                </div>
+
+                <div class="starGrade">
+                  <span class="grade">4.9 (13,625)</span>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+  <!-- 배너 뒷배경 수동으로 설정 -->
+  <div class="backGray"></div>
+  <!--  -->
+</html>
