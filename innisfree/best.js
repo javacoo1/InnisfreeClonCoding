@@ -248,3 +248,27 @@ function toggleDisplay() {
 //   sliderTrack.style.transition = "transform 0.3s ease";
 //   sliderTrack.style.transform = `translateX(${currentTranslate}px)`;
 // }
+
+// 버튼 누르면 하트 색 채워짐
+// document
+//   .getElementsByClassName("btnHeart")
+//   .addEventListener("click", function () {
+//     const imgElement = document.getElementsByClassName("btnHeart");
+
+//     if (imgElement.src.includes("../images/ui/icon_heart_white.png")) {
+//       imgElement.src = "../images/ui/icon_heart_on.png";
+//     } else {
+//       imgElement.src = "../images/ui/icon_heart_white.png";
+//     }
+//   });
+
+// 위에꺼 안됨
+// const heart = document.getElementsByClassName("btnHeart");
+
+// function fnChkLoginPagePopAlert(heart) {
+//   if (heart.classList.contains("active")) {
+//     heart.classList.remove("active");
+//   } else {
+//     heart.classList.add("active");
+//   }
+// }

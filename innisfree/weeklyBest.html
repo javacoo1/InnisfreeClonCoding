@@ -9,7 +9,22 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <script src="best.js"></script>
+    <script src="best.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.7.6/jquery.nicescroll.min.js"></script>
+    <style>
+      .swiper-pagination-progressbar-fill {
+        position: absolute;
+        left: 0;
+        top: 1px;
+        width: 100%;
+        height: 2px;
+        background-color: #000000;
+        transform: scale(0);
+        transform-origin: left top;
+      }
+    </style>
   </head>
   <body>
     <div class="wrap">
@@ -78,15 +93,12 @@
         <div class="inner">
           <div class="depth"><a href="index.html" class="home">홈</a></div>
 
-          <div class="depth active">
-            <button type="button" class="btn" onmouseenter="locDepList();">
+          <div class="depthC">
+            <button type="button" class="btn" onmouseenter="locDepList()">
+              <!-- onmouseleave="hideDepList()" -->
               베스트
             </button>
-            <ul
-              class="list"
-              tabindex="1"
-              style="display: block; overflow: hidden; outline: none"
-            >
+            <ul class="list" tabindex="1" id="categ">
               <li>
                 <a href="/kr/ko/Product.do?tp=1&amp;catCd01=UA">카테고리</a>
               </li>
@@ -133,7 +145,6 @@
                   onclick="location.href='weeklyBest.html'"
                   class="active"
                 >
-                  <!-- active에 font-weight를 높였으니까 주간 베스트에서는 주간 베스트를 active로 설정함 -->
                   <span>주간 베스트</span>
                 </button>
               </li>
@@ -151,17 +162,14 @@
           <div class="tabBar">
             <ul>
               <li class="active">
-                <button
-                  type="button"
-                  onclick="location.href='/kr/ko/BestSellerList.do?bestClCd=RC01&amp;catCd=ZZ'"
-                >
+                <button type="button" onclick="changeTab(this, 'best.html')">
                   전체
                 </button>
               </li>
               <li>
                 <button
                   type="button"
-                  onclick="location.href='/kr/ko/BestSellerList.do?bestClCd=RC01&amp;catCd=UA'"
+                  onclick="changeTab(this, 'bestSkin.html')"
                 >
                   스킨케어
                 </button>
@@ -170,65 +178,53 @@
               <li>
                 <button
                   type="button"
-                  onclick="location.href='/kr/ko/BestSellerList.do?bestClCd=RC01&amp;catCd=QW'"
+                  onclick="changeTab(this, 'bestMake.html')"
                 >
                   메이크업
                 </button>
               </li>
 
               <li>
-                <button
-                  type="button"
-                  onclick="location.href='/kr/ko/BestSellerList.do?bestClCd=RC01&amp;catCd=UB'"
-                >
+                <button type="button" onclick="changeTab(this, 'bestMan.html')">
                   남성
                 </button>
               </li>
 
               <li>
-                <button
-                  type="button"
-                  onclick="location.href='/kr/ko/BestSellerList.do?bestClCd=RC01&amp;catCd=QF'"
-                >
+                <button type="button" onclick="changeTab(this, 'bestBhp.html')">
                   바디/헤어/펫
                 </button>
               </li>
 
               <li>
-                <button
-                  type="button"
-                  onclick="location.href='/kr/ko/BestSellerList.do?bestClCd=RC01&amp;catCd=UT'"
-                >
+                <button type="button" onclick="changeTab(this, 'bestPs.html')">
                   기획 세트
                 </button>
               </li>
 
               <li>
-                <button
-                  type="button"
-                  onclick="location.href='/kr/ko/BestSellerList.do?bestClCd=RC01&amp;catCd=UK'"
-                >
+                <button type="button" onclick="changeTab(this, 'bestCos.html')">
                   미용소품
                 </button>
               </li>
             </ul>
-            <span class="date" id="week"
-              ><script>
-                function duringTime() {
+            <span class="date" id="nowTime">
+              <script>
+                function updateTime() {
                   let today = new Date();
                   let year = String(today.getFullYear());
                   let month = String(today.getMonth() + 1).padStart(2, "0");
                   let date = String(today.getDate()).padStart(2, "0");
-                  let date2 = String(today.getDate() - 7).padStart(2, "0");
+                  let hour = String(today.getHours()).padStart(2, "0");
+                  let minute = String(today.getUTCMinutes()).padStart(2, "0");
 
-                  // 첫번째 꺼를 -7
-                  const timeString2 = `${year}.${month}.${date2} ~ ${year}.${month}.${date} 기준`;
-                  document.getElementById("week").textContent = timeString2;
+                  const timeString = `${year}.${month}.${date} ${hour}:${minute} 기준`;
+                  document.getElementById("nowTime").textContent = timeString;
                 }
-                setInterval(duringTime, 1000);
-                duringTime();
-              </script></span
-            >
+                setInterval(updateTime, 100);
+                nowHours();
+              </script>
+            </span>
           </div>
 
           <!-- product images -->
@@ -264,7 +260,7 @@
                   <button
                     type="button"
                     class="btnHeart"
-                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                    onclick="fnChkLoginPagePopAlert(this);"
                   >
                     <span class="ir">찜</span></button
                   ><!-- 비활성 -->
@@ -345,7 +341,7 @@
                   <button
                     type="button"
                     class="btnHeart"
-                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                    onclick="fnChkLoginPagePopAlert(this);"
                   >
                     <span class="ir">찜</span></button
                   ><!-- 비활성 -->
@@ -430,7 +426,7 @@
                   <button
                     type="button"
                     class="btnHeart"
-                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                    onclick="fnChkLoginPagePopAlert(this);"
                   >
                     <span class="ir">찜</span></button
                   ><!-- 비활성 -->
@@ -515,7 +511,7 @@
                   <button
                     type="button"
                     class="btnHeart"
-                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                    onclick="fnChkLoginPagePopAlert(this);"
                   >
                     <span class="ir">찜</span></button
                   ><!-- 비활성 -->
@@ -597,7 +593,7 @@
                   <button
                     type="button"
                     class="btnHeart"
-                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                    onclick="fnChkLoginPagePopAlert(this);"
                   >
                     <span class="ir">찜</span></button
                   ><!-- 비활성 -->
@@ -682,7 +678,7 @@
                   <button
                     type="button"
                     class="btnHeart"
-                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                    onclick="fnChkLoginPagePopAlert(this);"
                   >
                     <span class="ir">찜</span></button
                   ><!-- 비활성 -->
@@ -763,7 +759,7 @@
                   <button
                     type="button"
                     class="btnHeart"
-                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                    onclick="fnChkLoginPagePopAlert(this);"
                   >
                     <span class="ir">찜</span></button
                   ><!-- 비활성 -->
@@ -844,7 +840,7 @@
                   <button
                     type="button"
                     class="btnHeart"
-                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                    onclick="fnChkLoginPagePopAlert(this);"
                   >
                     <span class="ir">찜</span></button
                   ><!-- 비활성 -->
@@ -929,7 +925,7 @@
                   <button
                     type="button"
                     class="btnHeart"
-                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                    onclick="fnChkLoginPagePopAlert(this);"
                   >
                     <span class="ir">찜</span></button
                   ><!-- 비활성 -->
@@ -1006,7 +1002,7 @@
                   <button
                     type="button"
                     class="btnHeart"
-                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                    onclick="fnChkLoginPagePopAlert(this);"
                   >
                     <span class="ir">찜</span></button
                   ><!-- 비활성 -->
@@ -1091,7 +1087,7 @@
                   <button
                     type="button"
                     class="btnHeart"
-                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                    onclick="fnChkLoginPagePopAlert(this);"
                   >
                     <span class="ir">찜</span></button
                   ><!-- 비활성 -->
@@ -1172,7 +1168,7 @@
                   <button
                     type="button"
                     class="btnHeart"
-                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                    onclick="fnChkLoginPagePopAlert(this);"
                   >
                     <span class="ir">찜</span></button
                   ><!-- 비활성 -->
@@ -1253,7 +1249,7 @@
                   <button
                     type="button"
                     class="btnHeart"
-                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                    onclick="fnChkLoginPagePopAlert(this);"
                   >
                     <span class="ir">찜</span></button
                   ><!-- 비활성 -->
@@ -1335,7 +1331,7 @@
                   <button
                     type="button"
                     class="btnHeart"
-                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                    onclick="fnChkLoginPagePopAlert(this);"
                   >
                     <span class="ir">찜</span></button
                   ><!-- 비활성 -->
@@ -1416,7 +1412,7 @@
                   <button
                     type="button"
                     class="btnHeart"
-                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                    onclick="fnChkLoginPagePopAlert(this);"
                   >
                     <span class="ir">찜</span></button
                   ><!-- 비활성 -->
@@ -1497,7 +1493,7 @@
                   <button
                     type="button"
                     class="btnHeart"
-                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                    onclick="fnChkLoginPagePopAlert(this);"
                   >
                     <span class="ir">찜</span></button
                   ><!-- 비활성 -->
@@ -1582,7 +1578,7 @@
                   <button
                     type="button"
                     class="btnHeart"
-                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                    onclick="fnChkLoginPagePopAlert(this);"
                   >
                     <span class="ir">찜</span></button
                   ><!-- 비활성 -->
@@ -1663,7 +1659,7 @@
                   <button
                     type="button"
                     class="btnHeart"
-                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                    onclick="fnChkLoginPagePopAlert(this);"
                   >
                     <span class="ir">찜</span></button
                   ><!-- 비활성 -->
@@ -1740,7 +1736,7 @@
                   <button
                     type="button"
                     class="btnHeart"
-                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                    onclick="fnChkLoginPagePopAlert(this);"
                   >
                     <span class="ir">찜</span></button
                   ><!-- 비활성 -->
@@ -1825,7 +1821,7 @@
                   <button
                     type="button"
                     class="btnHeart"
-                    onclick="$.jhead.fnChkLoginPagePopAlert();"
+                    onclick="fnChkLoginPagePopAlert(this);"
                   >
                     <span class="ir">찜</span></button
                   ><!-- 비활성 -->
@@ -2352,23 +2348,22 @@
             ></span>
           </div>
 
-                    <!-- 슬라이드 관련 script -->
-                    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-                    <script>
-                      var swiper = new Swiper(".swiper-container-initialized", {
-                        slidesPerView: 3,
-                        navigation: {
-                          loop: true,
-                          nextEl: ".btnNext",
-                          prevEl: ".btnPrev",
-                        },
-                        scrollbar: {
-                          el: ".swiper-pagination-progressbar",
-                        },
-                      });
-                    </script>
-                  </section>
-                </div>
+          <!-- 슬라이드 관련 script -->
+          <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+          <script>
+            var swiper = new Swiper(".swiper-container-initialized", {
+              // initialSlide: 13,
+              // slidesOffsetAfter: 0,
+              // slidesOffsetBefore: 0,
+              slidesPerView: "auto",
+              centeredSlides: true,
+              navigation: {
+                nextEl: ".btnNext",
+                prevEl: ".btnPrev",
+                loop: true,
+              },
+            });
+          </script>
         </section>
       </div>
       <!-- 일단 복붙하긴 했는대 아직 분석안함 -->
@@ -2432,6 +2427,7 @@
       <!-- 두 번째 상품 단락 -->
       <div class="termBetPandB2"></div>
       <div class="contWrap">
+        <div class="termterm"></div>
         <ul class="product_list01">
           <li>
             <div class="nail">
@@ -2464,7 +2460,7 @@
                 <button
                   type="button"
                   class="btnHeart"
-                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  onclick="fnChkLoginPagePopAlert(this);"
                 >
                   <span class="ir">찜</span></button
                 ><!-- 비활성 -->
@@ -2545,7 +2541,7 @@
                 <button
                   type="button"
                   class="btnHeart"
-                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  onclick="fnChkLoginPagePopAlert(this);"
                 >
                   <span class="ir">찜</span></button
                 ><!-- 비활성 -->
@@ -2626,7 +2622,7 @@
                 <button
                   type="button"
                   class="btnHeart"
-                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  onclick="fnChkLoginPagePopAlert(this);"
                 >
                   <span class="ir">찜</span></button
                 ><!-- 비활성 -->
@@ -2712,7 +2708,7 @@
                 <button
                   type="button"
                   class="btnHeart"
-                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  onclick="fnChkLoginPagePopAlert(this);"
                 >
                   <span class="ir">찜</span></button
                 ><!-- 비활성 -->
@@ -2793,7 +2789,7 @@
                 <button
                   type="button"
                   class="btnHeart"
-                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  onclick="fnChkLoginPagePopAlert(this);"
                 >
                   <span class="ir">찜</span></button
                 ><!-- 비활성 -->
@@ -2878,7 +2874,7 @@
                 <button
                   type="button"
                   class="btnHeart"
-                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  onclick="fnChkLoginPagePopAlert(this);"
                 >
                   <span class="ir">찜</span></button
                 ><!-- 비활성 -->
@@ -2960,7 +2956,7 @@
                 <button
                   type="button"
                   class="btnHeart"
-                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  onclick="fnChkLoginPagePopAlert(this);"
                 >
                   <span class="ir">찜</span></button
                 ><!-- 비활성 -->
@@ -3041,7 +3037,7 @@
                 <button
                   type="button"
                   class="btnHeart"
-                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  onclick="fnChkLoginPagePopAlert(this);"
                 >
                   <span class="ir">찜</span></button
                 ><!-- 비활성 -->
@@ -3122,7 +3118,7 @@
                 <button
                   type="button"
                   class="btnHeart"
-                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  onclick="fnChkLoginPagePopAlert(this);"
                 >
                   <span class="ir">찜</span></button
                 ><!-- 비활성 -->
@@ -3207,7 +3203,7 @@
                 <button
                   type="button"
                   class="btnHeart"
-                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  onclick="fnChkLoginPagePopAlert(this);"
                 >
                   <span class="ir">찜</span></button
                 ><!-- 비활성 -->
@@ -3292,7 +3288,7 @@
                 <button
                   type="button"
                   class="btnHeart"
-                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  onclick="fnChkLoginPagePopAlert(this);"
                 >
                   <span class="ir">찜</span></button
                 ><!-- 비활성 -->
@@ -3373,7 +3369,7 @@
                 <button
                   type="button"
                   class="btnHeart"
-                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  onclick="fnChkLoginPagePopAlert(this);"
                 >
                   <span class="ir">찜</span></button
                 ><!-- 비활성 -->
@@ -3458,7 +3454,7 @@
                 <button
                   type="button"
                   class="btnHeart"
-                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  onclick="fnChkLoginPagePopAlert(this);"
                 >
                   <span class="ir">찜</span></button
                 ><!-- 비활성 -->
@@ -3539,7 +3535,7 @@
                 <button
                   type="button"
                   class="btnHeart"
-                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  onclick="fnChkLoginPagePopAlert(this);"
                 >
                   <span class="ir">찜</span></button
                 ><!-- 비활성 -->
@@ -3620,7 +3616,7 @@
                 <button
                   type="button"
                   class="btnHeart"
-                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  onclick="fnChkLoginPagePopAlert(this);"
                 >
                   <span class="ir">찜</span></button
                 ><!-- 비활성 -->
@@ -3701,7 +3697,7 @@
                 <button
                   type="button"
                   class="btnHeart"
-                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  onclick="fnChkLoginPagePopAlert(this);"
                 >
                   <span class="ir">찜</span></button
                 ><!-- 비활성 -->
@@ -3782,7 +3778,7 @@
                 <button
                   type="button"
                   class="btnHeart"
-                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  onclick="fnChkLoginPagePopAlert(this);"
                 >
                   <span class="ir">찜</span></button
                 ><!-- 비활성 -->
@@ -3863,7 +3859,7 @@
                 <button
                   type="button"
                   class="btnHeart"
-                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  onclick="fnChkLoginPagePopAlert(this);"
                 >
                   <span class="ir">찜</span></button
                 ><!-- 비활성 -->
@@ -3944,7 +3940,7 @@
                 <button
                   type="button"
                   class="btnHeart"
-                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  onclick="fnChkLoginPagePopAlert(this);"
                 >
                   <span class="ir">찜</span></button
                 ><!-- 비활성 -->
@@ -4029,7 +4025,7 @@
                 <button
                   type="button"
                   class="btnHeart"
-                  onclick="$.jhead.fnChkLoginPagePopAlert();"
+                  onclick="fnChkLoginPagePopAlert(this);"
                 >
                   <span class="ir">찜</span></button
                 ><!-- 비활성 -->
@@ -4089,5 +4085,228 @@
   </body>
   <!-- 배너 뒷배경 수동으로 설정 -->
   <div class="backGray"></div>
+
+  <!-- footer -->
+  <footer id="iFooter">
+    <div class="menuWrap">
+      <div class="footMenu">
+        <div class="footnav">
+          <div class="footnavItem">서비스 이용약관</div>
+          <div class="footnavItem" style="color: black">
+            <strong>개인정보처리방침</strong>
+          </div>
+          <div class="footnavItem">영상정보처리기기 운영/관리 방침</div>
+          <div class="footnavItem">위치기반서비스 이용약관</div>
+          <div class="footnavItem">공지사항</div>
+          <div class="footnavItem">임직원서비스</div>
+        </div>
+        <div class="ftsns">
+          <span
+            ><img
+              src="https://images.innisfree.co.kr/resources/web2/images/ui/ico_youtube.png"
+              alt=""
+            />
+          </span>
+          <span
+            ><img
+              src="https://images.innisfree.co.kr/resources/web2/images/ui/ico_instagram.png"
+              alt=""
+          /></span>
+          <span
+            ><img
+              src="https://images.innisfree.co.kr/resources/web2/images/ui/ico_facebook.png"
+              alt=""
+          /></span>
+          <span
+            ><img
+              src="https://images.innisfree.co.kr/resources/web2/images/ui/ico_twitter.png"
+              alt=""
+          /></span>
+          <span
+            ><img
+              src="https://images.innisfree.co.kr/resources/web2/images/ui/ico_app.png"
+              alt=""
+          /></span>
+        </div>
+      </div>
+    </div>
+    <div class="ftinfo">
+      <div class="ftinfo-1">
+        <img
+          style="width: 157px; height: 20px; margin-bottom: 20px"
+          src="https://images.innisfree.co.kr/resources/web2/images/ui/logo_footer.png"
+          alt=""
+        />
+        <p>
+          <span>
+            (주)이니스프리 서울특별시 용산구 한강대로 100(한강로2가) 7층
+            이니스프리
+          </span>
+          <span>대표이사 최민정</span>
+        </p>
+        <p>
+          <span> 사업자 등록번호 106-86-68127 </span>
+          <span> 통신판매신고번호 2018-서울용산-0014 </span>
+          <span> 제품 문의 : 080-380-0114 </span>
+          <span> FAX 02-6040-7108 </span>
+        </p>
+        <p>
+          <span> 이메일 주소 </span>
+          <span>innisfree@innisfree.com</span>
+          <span>비즈니스제휴/입점문의 partner.biz@innisfree.com</span>
+        </p>
+        <p>
+          <span>이메일 주소 무단 수집 거부</span>
+          <span>개인정보 보호책임자 최민정</span>
+          <span>호스팅 서비스 제공자 ㈜이니스프리</span>
+          <br />
+        </p>
+        <div class="lgEscrow">
+          <strong class="tit">토스페이먼츠(주)의 에스크로 서비스 가입</strong>
+          저희 쇼핑몰은 고객님의 안전한 거래를 위해 무통장입금 거래에 대해
+          구매안전서비스를 적용하고 있습니다.<br />
+          토스페이먼츠 구매안전 서비스 가입확인
+        </div>
+        <div class="copyRight">
+          Copyright © 2023 Innisfree. All Rights Reserved.
+        </div>
+        <div class="awards">
+          <span class="web2023">
+            <img
+              class="awardsImage"
+              src="https://images.innisfree.co.kr/resources/web2/images/ui/ico_award_w2023.png"
+              alt=""
+            />
+            <span class="text">
+              웹어워드 2023
+              <br />
+              모바일마케팅부문 통합대상
+            </span>
+          </span>
+          <span class="smart2023">
+            <img
+              class="awardsImage"
+              src="https://images.innisfree.co.kr/resources/web2/images/ui/ico_award_s2023.png"
+              alt=""
+            />
+            <span class="text">
+              스마트앱어워드 2023
+              <br />
+              브랜드부문 통합대상
+            </span>
+          </span>
+          <span class="smart2022">
+            <img
+              class="awardsImage"
+              src="https://images.innisfree.co.kr/resources/web2/images/ui/ico_award_w2022.png"
+              alt=""
+            />
+            <span class="text">
+              스마트앱어워드 2022
+              <br />
+              브랜드부문 통합대상
+            </span>
+          </span>
+        </div>
+      </div>
+      <div class="ftinfo-2">
+        <dl>
+          <dt>고객 서비스 센터 이용안내</dt>
+          <dd>
+            <strong>080-380-0114</strong>
+            (수신자 요금 부담)
+          </dd>
+          <dd>
+            운영시간 AM 09:00 ~ PM 18:00 (주말 및 공휴일 휴무)
+            <br />
+            점심시간 PM 12:00 ~ PM 13:00
+          </dd>
+          <dd id="lastll">
+            <a href="https://www.innisfree.com/kr/ko/CounselCustomer.do"
+              >1:1상담신청</a
+            >
+          </dd>
+        </dl>
+      </div>
+    </div>
+  </footer>
+  <!-- category -->
+  <!-- <div>
+    <ul class="list" tabindex="1" id="categ">
+      <li>
+        <a href="/kr/ko/Product.do?tp=1&amp;catCd01=UA">카테고리</a>
+      </li>
+      <li><a href="/kr/ko/HotdealSpcPrcMain.do">특가</a></li>
+      <li><a href="/kr/ko/Event.do">이벤트</a></li>
+      <li><a href="/kr/ko/BestSellerList.do">베스트</a></li>
+      <li><a href="/kr/ko/GripLiveMain.do">라이브</a></li>
+      <li><a href="forMe.html">FOR ME</a></li>
+      <li><a href="/kr/ko/DirectPageAboutUs.do">ABOUT</a></li>
+      <li><a href="/kr/ko/CustMainPage.do">고객센터</a></li>
+      <li>
+        <a href="/kr/ko/MypageOnlineOrderList.do?reqOrdStatType=000"
+          >마이페이지</a
+        >
+      </li>
+      <li>
+        <a href="/kr/ko/MypageBottleStaus.do" class="lk">공병수거 캠페인 </a>
+      </li>
+      <li><a href="/kr/ko/GreenteaClubMembership.do">멤버십</a></li>
+    </ul>
+  </div> -->
   <!--  -->
+
+  <script>
+    function fnChkLoginPagePopAlert(button) {
+      // active 클래스 추가/제거
+      button.classList.toggle("active");
+    }
+  </script>
+
+  <!-- 카테고리 마우스 on/off -->
+  <script>
+    // function locDepList() {
+    //   const divElement = document.getElementById("categ");
+    //   if (divElement) {
+    //     divElement.className = "list-active";
+    //   }
+    // }
+
+    // function hideDepList() {
+    //   const divElement = document.getElementById("categ");
+    //   if (divElement) {
+    //     divElement.className = "list";
+    //   }
+    // }
+
+    var locDepList = function () {
+      var target = event.target || event.srcElement;
+      var $this = $(target);
+      var locWrap = $this.closest(".location");
+      var locDep = $this.parent();
+      var depList = locWrap.find(".list");
+      depList.stop().slideUp(200);
+      $this
+        .next(".list")
+        .css("display", "block") // 얘 넣어서 block으로
+        .stop()
+        .slideDown(500, function () {
+          depList.niceScroll({
+            cursorcolor: "#b2b2b2",
+            cursorwidth: 2,
+            cursorborder: "none",
+          });
+        })
+        .parent()
+        .addClass("active")
+        .siblings()
+        .removeClass("active");
+      locDep.off().on("mouseleave", function () {
+        depList.stop().slideUp(300, function () {
+          depList.getNiceScroll().remove();
+          depList.attr("style", "");
+        });
+      });
+    };
+  </script>
 </html>
